@@ -4,7 +4,10 @@ body{
 	padding:0;
 	margin:0;
 	background-color: #f4f4f4;
-	height:100%;
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .container{
@@ -147,12 +150,53 @@ header #branding nav{
 
 
 footer {
+	/*position: fixed;*/
+	left: 0;
+	bottom: 0;
+	width: 100%;
 	padding: 20px;
 	margin-top: 20px;
 	color: white;
 	background-color: black;
 	text-align: center;
 	float: bottom;
-
+	display: block;
+	overflow: hidden;
+	width: auto;
 }
 
+
+/*
+individual below
+*/
+
+.individualContent {
+	margin: auto;
+	margin-top: 20px;
+	width: 50%;
+	height: auto;
+	background-color: grey;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	clear: both;
+}
+
+.reviews {
+	border-collapse: collapse;
+	margin: 10px auto;
+}
+
+.reviews th, td{
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.reviews tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#reviewsHeader {
+	background-color: red;
+}
