@@ -10,6 +10,15 @@ body{
 	flex-direction: column;
 }
 
+.top_bar{
+	position: fixed;
+	top: 0px;
+	display: flex;
+	flex-flow: row wrap;
+	background: red;
+	border-bottom: lightgrey 5px solid;
+}
+
 .container{
 	width:60%;
 	margin:auto;
@@ -252,6 +261,7 @@ input[name="nameInput"]{
   display: block;
 }*/
 
+/* Results page css section*/
 .results_title{
 	background-color: rgb(248, 244, 244);
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
@@ -335,7 +345,13 @@ input[name="nameInput"]{
 	flex-direction: column;
 	align-items: stretch;
 	padding: 5px;
-	border: 2px solid;
+}
+
+.submission_main div {
+	height: 50px;
+	width:200;
+	margin:5px;
+	
 }
 
 table, th, td {
