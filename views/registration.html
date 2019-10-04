@@ -4,6 +4,8 @@
 
 <head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <meta charset="UTF-8"/>
 
 <!-- <meta http-equiv="refresh" content="3; url=redirect.html"/> -->
@@ -44,9 +46,9 @@
 		<div class="signin">
 			<form>
 				<h2>Sign In</h2>
-				<p>Email : </p>
+				<p>Email</p>
 				<input type="email" name="email"><br>
-				<p>Password : </p>
+				<p>Password</p>
 				<input type="password" name="pass"><br>
 
 				<button type="submit" class="button_1">Sign In</button><br>
@@ -68,28 +70,34 @@
   					</tr>
 				</table> -->
 
-				<span>
-					<p1 style="display:inline-block; width:45%; text-align-last: left; margin-bottom: 7px">First Name :</p1>
-					<p1 style="display:inline-block; width:45%; text-align-last: left">Last Name :</p1>
-					<input type="text" name="firstname" style="display:inline-block;width: 40%">
-					<input type="text" name="lastname" style="display:inline-block;width: 40%">
-				</span>
-				<p >Email :</p>
-				<input type="email" name="email"><br>
-				<span>
-					<p style="display:inline-block; width:50%">Use email as username</p>
-					<input type="checkbox" checked="checked" style="display: inline-block; width: 15%; margin-right: 30px">
-					
-  					<!-- <span class="checkmark"></span> -->
-				</span>
-				<p>User Name: </p>
-				<input type="text" name="username" id="userInput"><br>
+				<div id="firstName">
+					<p1>First Name</p1>
+					<br>
+					<input name="nameInput" type="text">
+				</div>
+				<div id="lastName">
+					<p1>Last Name</p1>
+					<br>
+					<input name="nameInput" type="text">
+				</div>
+				<p >Email</p>
+				<input type="email" name="email">
+				<div id="emailCheck">
+					<div id="emailCheckText">
+						<p>Use email as username</p>
+					</div>
+					<div id="emailCheckBox">
+						<input type="checkbox" checked="checked">
+					</div>
+				</div>
+				<p>User Name</p>
+				<input type="text" name="username" id="userInput">
 				
-				<p>Create Password : </p>
-				<input type="password" name="pass"><br>
-				<p>Confirm Password : </p>
-				<input type="password" name="pass"><br>
-				<button type="submit" class="button_1">Create Account</button><br>
+				<p>Create Password</p>
+				<input type="password" name="pass">
+				<p>Confirm Password</p>
+				<input type="password" name="pass">
+				<button type="submit" class="button_1">Create Account</button>
 				
 			</form>
 		</div>
