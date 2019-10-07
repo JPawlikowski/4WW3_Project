@@ -10,7 +10,50 @@ body{
 	flex-direction: column;
 }
 
+<<<<<<< HEAD
 img {max-width:100%}
+=======
+/*Registration and individual Header*/
+header{
+	background: red;
+	color: white;
+	padding-top: 30px;
+	min-height: 70px;
+	border-bottom: lightgrey 5px solid;
+}
+
+header a{
+	color: #ffffff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+header ul{
+	margin:0;
+	padding:0;
+}
+
+header li{
+	float:right;
+	display:inline;
+	padding:0 20px 0 20px;
+
+}
+
+header #branding{
+	float:left;
+}
+
+header #branding h1{
+	margin:0;
+}
+
+header #branding nav{
+	float:right;
+	margin-top: 10px;
+}
+>>>>>>> 092bf7b22ba6c683ccd103d87a5fa4bdf484d15f
 
 .top_bar{
 	position: fixed;
@@ -30,29 +73,30 @@ img {max-width:100%}
 
 .registration {
 	margin: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	display: flex;
 	height: auto;
-	background-color: grey;
+	background-color: #f0edeb;
 	/*display: block;*/
 	text-align: center;
+	border-radius: 5px;
 }
 
 .signin {
-		height: auto;
-		float: left;
-		background-color: red;
-	}
+	height: auto;
+	float: left;
+	background-color: none;
+	/*border-right: solid;*/
+	border-radius: 5px;
+}
 
 .register {
-		height: auto;
-	
-		float: right;
-		/*padding: 10px;*/
-		
-	}
-
+	height: auto;
+	float: right;
+	background-color: none;
+	border-radius: 5px;
+}
 
 .button_1{
 	margin: 10px auto;
@@ -60,11 +104,13 @@ img {max-width:100%}
 	height:25px;
 	background: red;
 	border:0;
+	border-radius: 3px;
 	padding-left: 20px;
 	padding-right: 20px;
 	color: white;
 }
 
+/*registration scaling, screen width dependent*/
 @media screen and (max-width: 2000px){
 	.registration {
 		width: 50%;
@@ -138,69 +184,24 @@ img {max-width:100%}
 
 }
 
-header{
-	background: red;
-	color: white;
-	padding-top: 30px;
-	min-height: 70px;
-	border-bottom: lightgrey 5px solid;
-}
-
-header a{
-	color: #ffffff;
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 16px;
-}
-
-header ul{
-	margin:0;
-	padding:0;
-}
-
-header li{
-	float:right;
-	display:inline;
-	padding:0 20px 0 20px;
-
-}
-
-header #branding{
-	float:left;
-}
-
-header #branding h1{
-	margin:0;
-}
-
-header #branding nav{
-	float:right;
-	margin-top: 10px;
-}
-
 .registration input{
 	display: inline-block;
 	padding:1%;
 	width:60%;
+	border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    border-radius: 5px;
 }
 
 .registration p{
 	margin: auto;
 	margin-top: 6px;
 	margin-bottom: 3px;
-	/*margin-left: 18%;
-	margin-top: 25px;
-	margin-bottom: 7px;*/
-}
-
-.registration h1{
-	font-style: Arial;
 }
 
 .registration h2{
 	padding-bottom: 20px;
 	font-style: Arial;
-	text-decoration: underline;
 }
 
 #firstName {
@@ -209,7 +210,6 @@ header #branding nav{
 	margin-bottom: 10px;
 	width: 50%;
 	float: left;
-	/*padding-bottom: 10px;*/
 }
 
 #firstName p1{
@@ -241,6 +241,7 @@ input[name="nameInput"]{
 	margin: 2px auto;
 	display: block; 
 	text-align: center;
+	font-size: 12px;
 }
 
 #emailCheck {
@@ -279,21 +280,11 @@ input[name="nameInput"]{
   width: 30px;
   background-color: #eee;
 }
-/* On mouse-over, add a grey background color */
-/*.userNameCheck:hover input ~ .checkmark {
-  background-color: #ccc;
+
+.checkmark input:checked{
+	background-color: #2196F3;
 }
-.userNameCheck input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.container input:checked ~ .checkmark:after {
-  display: block;
-}*/
+/*end of registration page css*/
 
 /* Results page css section*/
 .results_title {
@@ -516,32 +507,52 @@ individual below
 
 .individualContent {
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 15px;
 	width: 50%;
 	height: auto;
-	background-color: grey;
+	background-color: #f0edeb;
+	border-radius: 5px;
 	display: block;
 	text-align: center;
 	padding: 10px;
 	clear: both;
 }
 
-.reviews {
+#individualTitle {
+	margin-top: 3%;
+}
+
+#individualMap {
+	width: 80%;
+
+}
+
+#individualDesc{
+	margin: 3%;
+}
+
+.reviewsTable {
 	border-collapse: collapse;
 	margin: 10px auto;
 	width: 90%;
 }
 
-.reviews th, td{
+.reviewsTable th, td{
   padding: 8px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
 }
 
-.reviews tr:nth-child(even){
-	background-color: #f2f2f2;
+.reviewsTable tr:nth-child(even){
+	background-color: white;
 }
 
-#reviewsHeader {
-	background-color: red;
+.reviewsTable tr:nth-child(odd){
+	background-color: #e6e6e6;
 }
+
+#reviewsTableHeader {
+	background-color: #d1d1d1;  /*slightly darker top of table*/
+}
+
+/* End of individual page*/
