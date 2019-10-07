@@ -10,9 +10,7 @@ body{
 	flex-direction: column;
 }
 
-<<<<<<< HEAD
 img {max-width:100%}
-=======
 /*Registration and individual Header*/
 header{
 	background: red;
@@ -53,7 +51,6 @@ header #branding nav{
 	float:right;
 	margin-top: 10px;
 }
->>>>>>> 092bf7b22ba6c683ccd103d87a5fa4bdf484d15f
 
 .top_bar{
 	position: fixed;
