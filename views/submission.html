@@ -21,7 +21,7 @@
 
         <!-- <link rel="icon" href="favicon.ico"/> -->
 
-        <title>Search Results</title>
+        <title>Submit a review</title>
 
     </head>
 
@@ -30,12 +30,12 @@
         <header>
             <div class="container">
                 <div id="branding">
-                    <h1><img src="images/polish_crest.jpg" alt="Polish Crest" style="width:200px;height:100px;"> Gas station reviews! <img src="images/gas.jpg" alt="gas image" style="width:200px;height:100px;"></h1>
+                    <h1> Gas station reviews! </h1>
                 </div>
                 <nav>
                     <ul>
                         <li><a href="submission.html">Submit</a></li>
-                        <li><a href="search.html">Search</a></li>
+                        <li><a href="results_sample.html">Search</a></li>
                     </ul>
                 </nav>
             </div>
@@ -48,29 +48,31 @@
         <div class="submission_main"> 
 
             <div>
-                Name: <input type="text" name="name" value="Name.." id="name">
+                Name: </br> <input type="text" name="name" value="Name.." id="name"> </br>
             </div>
 
             <div>
-                Address: <input type="text" name="address" value="Address.." id="address">
+                Address: </br> <input type="text" name="address" value="Address.." id="address"> </br>
             </div>
 
             <div>
-                Select an image to upload:
+                Select an image to upload: </br>
                 <input type="file" name="imgupload" value="imgupload" id="imgupload">
+                </br>
             </div>
 
             <div>
-                Rating: Terrible
+                Rating: </br>
+                <span class="fa fa-thumbs-down" style="color:red;"></span>
                 <input id="terrible" type="radio" name="rating" value="1">
                 <input id="bad" type="radio" name="rating" value="2">
                 <input id="mediocre" type="radio" name="rating" value="3">
                 <input id="good" type="radio" name="rating" value="4">
                 <input id="excellent" type="radio" name="rating" value="5">
-                Excellent
+                <span class="fa fa-thumbs-up" style="color:red;"></span>
             </div>
 
-            <input type="submit" value="submit">
+            <input class="red_button" type="submit" value="submit">
 
         </div>
 

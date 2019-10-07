@@ -10,6 +10,8 @@ body{
 	flex-direction: column;
 }
 
+img {max-width:100%}
+
 .top_bar{
 	position: fixed;
 	top: 0px;
@@ -74,6 +76,16 @@ body{
 	.register {
 		width: 50%;
 	}
+
+	.results_title{
+		width: 50%;
+		height: 50%;
+	}
+
+	.results_main{
+		width: 50%;
+		height: 50%;
+	}
 }
 
 @media screen and (max-width: 999px){
@@ -87,6 +99,17 @@ body{
 	.register {
 		width: 65%;
 	}
+
+	.results_title{
+		width: 65%;
+		height: 65%;
+	}
+
+	.results_main{
+		width: 65%;
+		height: 65%;
+	}
+
 }
 
 @media screen and (max-width: 600px){
@@ -102,6 +125,17 @@ body{
 	.register {
 		width: 100%;
 	}
+
+	.results_title{
+		width: 100%;
+		height: 100%;
+	}
+
+	.results_main{
+		width: 100%;
+		height: 100%;
+	}
+
 }
 
 header{
@@ -262,7 +296,7 @@ input[name="nameInput"]{
 }*/
 
 /* Results page css section*/
-.results_title{
+.results_title {
 	background-color: rgb(248, 244, 244);
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 	border-bottom: 1px solid #ccc;
@@ -274,7 +308,7 @@ input[name="nameInput"]{
 	padding: 10px;
 
 }
-.results_main{
+.results_main {
 	margin: auto;
 	margin-top: 20px;
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
@@ -289,7 +323,7 @@ input[name="nameInput"]{
 	text-align: left; */
 }
 
-.results_main div{
+.results_main div {
 	height: 110px;
 	margin:5px;
 }
@@ -304,12 +338,12 @@ input[name="nameInput"]{
 	border: none;
 }
 
-.single_result{
+.single_result {
 	margin: auto;
 
 }
 
-.address_text{
+.address_text {
 	font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
 }
 
@@ -318,23 +352,12 @@ input[name="nameInput"]{
 	color: orange;
 }
 
-.previous_results {
-	background-color: black;
-	color: rgb(255, 254, 254);
-}
-
-.next_results {
-	background-color: black;
-	color: white;
-	
-}
-
 .page_select {
 	font-size: 34px;
 	margin-bottom: 10px;
 }
 
-.submission_main{
+.submission_main {
 	margin: auto;
 	margin-top: 20px;
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
@@ -349,9 +372,117 @@ input[name="nameInput"]{
 
 .submission_main div {
 	height: 50px;
+	padding: 20px;
 	width:200;
 	margin:5px;
 	
+}
+
+.submission_main input[type=text] {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+.red_button {
+	padding: 10px 20px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+.red_next_button {
+	padding: 10px 43.5px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+.search_main {
+	margin: auto;
+	text-align: center;
+	margin-top: 25px;
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	width: 75%;
+	height: 500px;
+	background-color: rgb(248, 244, 244);
+	flex-direction: row;
+	align-items: stretch;
+
+}
+
+.search_main div{
+	font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+	margin:auto;
+}
+
+.search_main input[type=text] {
+	width: 75%;
+	padding: 12px;
+	margin: 8px;
+	box-sizing: border-box;
+}
+
+.search_main select{
+	padding: 10px 20px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	}
+
+/* deals with scaling for results and submission pages*/
+@media screen and (max-width: 600px) {
+
+	.results_title{
+		width: 75%;
+		height: 100%;
+	}
+
+	.results_main{
+		width: 97%;
+		height: 100%;
+	}
+
+	.results_main li {
+		font-size: 75%;
+	}
+
+	.address_text{
+		font-size: 75%;
+	}
+
+	.submission_main{
+		width: 97%;
+		height: 100%;
+	}
+
+	.submission_main input[type=text] {
+		width: 100%;
+	  }
+
+	.search_main{
+		width: 100%;
+	}
+
+	.search_main img{
+		width: 50%;
+		height: 30%;
+	}
+
 }
 
 table, th, td {
