@@ -296,6 +296,14 @@ input[name="nameInput"]{
 	padding: 10px;
 
 }
+
+.map_div {
+	padding-top: 1%;
+	text-align: center;
+	margin: auto;
+	width: 50%;
+}
+
 .results_main {
 	margin: auto;
 	margin-top: 20px;
@@ -304,8 +312,6 @@ input[name="nameInput"]{
 	height: 500px;
 	background-color: rgb(248, 244, 244);
 	justify-content: space-evenly;
-	flex-direction: column;
-	align-items: stretch;
 	padding: 5px;
 	/* display: block;
 	text-align: left; */
@@ -347,6 +353,7 @@ input[name="nameInput"]{
 
 .submission_main {
 	margin: auto;
+	text-align: center;
 	margin-top: 20px;
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 	width: 50%;
@@ -430,7 +437,7 @@ input[name="nameInput"]{
 	border: 1px solid red;
 	-webkit-appearance: none;
     -moz-appearance: none;
-	}
+}
 
 /* deals with scaling for results and submission pages*/
 @media screen and (max-width: 600px) {
@@ -481,20 +488,19 @@ table, th, td {
 
 
 footer {
-	/*position: fixed;*/
 	left: 0;
-	bottom: 0;
+	bottom: 0px;
+	position: absolute;
 	width: 100%;
 	padding: 20px;
 	margin-top: 20px;
 	color: white;
 	background-color: black;
 	text-align: center;
-	float: bottom;
 	display: block;
 	overflow: hidden;
-	width: auto;
 }
+
 
 
 
