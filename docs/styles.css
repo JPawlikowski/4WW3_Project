@@ -1,0 +1,577 @@
+body{
+	font-family: Arial, Helvitica, sans-serif;
+	font-size:15px;
+	padding:0;
+	margin:0;
+	background-color: #f4f4f4;
+	height: auto;
+	width: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+img {max-width:100%}
+
+.header {
+  overflow: hidden;
+  background-color: red;
+  padding: 20px 10px;
+}
+
+#headerTitle{
+	margin-left: 5%;
+}
+
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.headerRight {
+  float: right;
+  margin-right: 5%; 
+}
+
+@media screen and (max-width: 600px) {
+	.header a {
+    float: none;
+    display: block;
+    text-align: center;
+  }
+  #headerTitle{
+	margin: auto;
+	}
+  .headerRight {
+    float: none;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+.container{
+	width:60%;
+	margin:auto;
+	overflow:hidden;
+	display: block;
+}
+
+.registration {
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: flex;
+	height: auto;
+	background-color: #f0edeb;
+	/*display: block;*/
+	text-align: center;
+	border-radius: 5px;
+}
+
+.signin {
+	height: auto;
+	float: left;
+	background-color: none;
+	/*border-right: solid;*/
+	border-radius: 5px;
+}
+
+.register {
+	height: auto;
+	float: right;
+	background-color: none;
+	border-radius: 5px;
+}
+
+.button_1{
+	margin: 10px auto;
+	display: block;
+	height:25px;
+	background: red;
+	border:0;
+	border-radius: 3px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: white;
+}
+
+.button_1:hover{
+	background-color: darkred;
+}
+
+/*registration scaling, screen width dependent*/
+@media screen and (max-width: 2000px){
+	.registration {
+		width: 50%;
+	}
+	.signin {
+		width: 50%;
+	}
+
+	.register {
+		width: 50%;
+	}
+
+	.results_title{
+		width: 50%;
+		height: 50%;
+	}
+
+	.results_main{
+		width: 50%;
+		height: 50%;
+	}
+}
+
+@media screen and (max-width: 999px){
+	.registration {
+		width: 65%;
+	}
+	.signin {
+		width: 65%;
+	}
+
+	.register {
+		width: 65%;
+	}
+
+	.results_title{
+		width: 65%;
+		height: 65%;
+	}
+
+	.results_main{
+		width: 65%;
+		height: 65%;
+	}
+
+}
+
+@media screen and (max-width: 600px){
+	.registration {
+		width: 80%;
+		flex-direction: column;
+	}
+
+	.signin {
+		width: 100%;
+	}
+
+	.register {
+		width: 100%;
+	}
+
+	.results_title{
+		width: 100%;
+		height: 100%;
+	}
+
+	.results_main{
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+.registration input{
+	display: inline-block;
+	padding:1%;
+	width:60%;
+	border-color: rgba(0, 0, 0, .15);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.registration input:focus{
+	border-color: #52aeff;
+}
+
+.registration p{
+	margin: auto;
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+
+.registration h2{
+	padding-bottom: 20px;
+	font-style: Arial;
+}
+
+#firstName {
+	display: inline-block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 50%;
+	float: left;
+}
+
+#firstName p1{
+	display: inline-block;
+	float: left;
+	width: 100%;
+}
+
+#lastName {
+	display: inline-block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 50%;
+	float: right;
+}
+
+#lastName p1{
+	float: left;
+	width: 100%;
+}
+
+input[name="nameInput"]{
+	display:inline-block;
+	width: 80%;
+}
+
+#forgotPass {
+	margin: 2px auto;
+	display: block; 
+	text-align: center;
+	font-size: 12px;
+}
+
+#emailCheck {
+	display: flex;
+	flex-direction: column;
+}
+
+#emailCheckText {
+	display: flex;
+	text-align: center;
+	width: 100%;
+	height: 50%;
+	padding-top: 6px;
+	padding-bottom: 3px;
+}
+
+#emailCheckText p{
+	margin: auto;
+}
+
+#emailCheckBox {
+	display: flex;
+	width: 100%;
+	height: 50%;
+	padding-top: 6px;
+	padding-bottom: 3px;
+	text-align: center;
+}
+
+#emailCheckBox input{
+	margin: auto;
+}
+
+.checkmark {
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+}
+
+.checkmark input:checked{
+	background-color: #2196F3;
+}
+/*end of registration page css*/
+
+/* Results page css section*/
+.results_title {
+	background-color: rgb(248, 244, 244);
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+	margin-top: 20px;
+	margin: auto;
+	text-align: left;
+	width: 50%;
+	height: 20px;
+	padding: 10px;
+
+}
+
+.map_div {
+	padding-top: 1%;
+	text-align: center;
+	margin: auto;
+	width: 50%;
+}
+
+.results_main {
+	margin: auto;
+	margin-top: 20px;
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	width: 50%;
+	height: 500px;
+	background-color: rgb(248, 244, 244);
+	justify-content: space-evenly;
+	padding: 5px;
+	/* display: block;
+	text-align: left; */
+}
+
+.results_main div {
+	height: 110px;
+	margin:5px;
+}
+
+.results_main li {
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+}
+
+/* to prevent the last item in the list from having a bottom border */ 
+.results_main li:last-child {
+	border: none;
+}
+
+.single_result {
+	margin: auto;
+
+}
+
+.address_text {
+	font: 200 15px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+/* for coloring the checked stars */
+.checked {
+	color: orange;
+}
+
+.page_select {
+	font-size: 34px;
+	margin-bottom: 10px;
+}
+
+.submission_main {
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	width: 50%;
+	height: 500px;
+	/*background-color: rgb(248, 244, 244);*/
+	background-color: #f0edeb;
+	justify-content: space-evenly;
+	flex-direction: column;
+	align-items: stretch;
+	padding: 5px;
+}
+
+.submission_main div {
+	height: 50px;
+	padding: 20px;
+	width:200;
+	margin:5px;
+	
+}
+
+.submission_main input[type=text] {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+.red_button {
+	padding: 10px 20px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+.red_next_button {
+	padding: 10px 43.5px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	cursor: pointer;
+}
+
+.search_main {
+	margin: auto;
+	text-align: center;
+	margin-top: 25px;
+	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+	width: 75%;
+	height: 500px;
+	background-color: rgb(248, 244, 244);
+	flex-direction: row;
+	align-items: stretch;
+
+}
+
+.search_main div{
+	font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+	margin:auto;
+}
+
+.search_main input[type=text] {
+	width: 75%;
+	padding: 12px;
+	margin: 8px;
+	box-sizing: border-box;
+}
+
+.search_main select{
+	padding: 10px 20px !important;
+	font-size: 21px !important;
+	background-color: red;
+	font-weight: bold;
+	color: white;
+	border-radius: 100px;
+	border: 1px solid red;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* deals with scaling for results and submission pages*/
+@media screen and (max-width: 600px) {
+
+	.results_title{
+		width: 75%;
+		height: 100%;
+	}
+
+	.results_main{
+		width: 97%;
+		height: 100%;
+	}
+
+	.results_main li {
+		font-size: 75%;
+	}
+
+	.address_text{
+		font-size: 75%;
+	}
+
+	.submission_main{
+		width: 97%;
+		height: 100%;
+	}
+
+	.submission_main input[type=text] {
+		width: 100%;
+	  }
+
+	.search_main{
+		width: 100%;
+	}
+
+	.search_main img{
+		width: 50%;
+		height: 30%;
+	}
+
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 15px;
+}
+
+
+footer {
+	left: 0;
+	bottom: 0px;
+	position: absolute;
+	width: 100%;
+	padding: 20px;
+	margin-top: 20px;
+	color: white;
+	background-color: black;
+	text-align: center;
+	display: block;
+	overflow: hidden;
+}
+
+
+
+
+/*
+individual below
+*/
+
+.individualContent {
+	margin: auto;
+	margin-top: 15px;
+	width: 50%;
+	height: auto;
+	background-color: #f0edeb;
+	border-radius: 5px;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	clear: both;
+}
+
+#individualTitle {
+	margin-top: 3%;
+	font-size: 34px;
+}
+
+#individualAddr {
+	font-size: 15px;
+}
+
+#individualMap {
+	width: 80%;
+
+}
+
+#individualDesc{
+	margin: 3%;
+}
+
+.reviewsTable {
+	border-collapse: collapse;
+	margin: 10px auto;
+	width: 90%;
+}
+
+.reviewsTable th, td{
+  padding: 8px;
+  text-align: left;
+  /*border-bottom: 1px solid #ddd;*/
+}
+
+.reviewsTable tr:nth-child(even){
+	background-color: white;
+}
+
+.reviewsTable tr:nth-child(odd){
+	background-color: #e6e6e6;
+}
+
+#reviewsTableHeader {
+	background-color: #d1d1d1;  /*slightly darker top of table*/
+}
+
+/* End of individual page*/
