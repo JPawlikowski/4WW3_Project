@@ -234,7 +234,6 @@ img {max-width:100%}
 
 .registration h2{
 	padding-bottom: 20px;
-	
 }
 
 #firstName {
@@ -245,7 +244,7 @@ img {max-width:100%}
 	float: left;
 }
 
-#firstName p1{
+#firstName p{
 	display: inline-block;
 	float: left;
 	width: 100%;
@@ -259,7 +258,7 @@ img {max-width:100%}
 	float: right;
 }
 
-#lastName p1{
+#lastName p{
 	float: left;
 	width: 100%;
 }
@@ -426,8 +425,7 @@ input[name="nameInput"]{
 .submission_main div {
 	height: 50px;
 	padding: 20px;
-	width:200px;
-	margin:5px;
+	margin: 5px;
 }
 
 .submission_main input[type=text] {
@@ -446,7 +444,6 @@ input[name="nameInput"]{
 	border-radius: 100px;
 	border: 1px solid red;
 	cursor: pointer;
-	/*margin: auto;*/
 }
 
 .red_next_button {
