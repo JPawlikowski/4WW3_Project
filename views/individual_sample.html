@@ -12,6 +12,9 @@
 
 <meta name="keywords" content="examples"/>
 
+<!-- used for icons such as the 5 star ratings-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" href="styles.css"/>
 
 <meta name="viewport" content="width=device-width">
@@ -22,27 +25,21 @@
 
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div id="branding">
-        <h1>Gas station reviews!</h1>
+  <div class="header">
+    <a id="headerTitle" href="#search.html" class="logo">Gas Station Reviews</a>
+      <div class="headerRight">
+        <a href="#search.html">Search</a>
+        <a href="#registration.html">Register</a>
       </div>
-      <nav>
-        <ul>
-          <li><a href="submission.html">Submit</a></li>
-          <li><a href="search.html">Search</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  </div>
 
 <div class="individualContent">
 		<noscript>Please enable javascript</noscript>
-		<h1 id="individualTitle">Object Number 1</h1>
-    <h3>Address information</h3>
-    <img id="individualMap" src="../Resources/ExampleScreenshot.jpg" alt="sample screenshot">
-		<p id="individualDesc" >Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+		<h1 id="individualTitle">Petro Poland</h1>
+    <h3 id="individualAddr" >ul. Grzybowska 73 -- Mirów</h3>
+    <img id="individualMap" src="images/poland1.jpg" alt="sample screenshot">
+		<p id="individualDesc" >Wbrew powszechnemu przekonaniu Lorem Ipsum nie jest zwykłym tekstem. Ma swoje korzenie w klasycznej literaturze łacińskiej z 45 rpne, która ma ponad 2000 lat. Richard McClintock, łaciński profesor w Hampden-Sydney College w Wirginii, spojrzał na jedno z bardziej niejasnych łacińskich słów consectetur z fragmentu Lorem Ipsum i przeglądając cytaty tego słowa w literaturze klasycznej, odkrył niewątpliwe źródło. Lorem Ipsum pochodzi z sekcji 1.10.32 i 1.10.33 „de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) autorstwa Cycerona, napisanej w 45 rpne Ta książka jest traktatem o teorii etyki, bardzo popularnym w okresie renesansu. Pierwsza linia Lorem Ipsum, „Lorem ipsum dolor sit amet ..”, pochodzi z linii z sekcji 1.10.32.
+Standardowa część Lorem Ipsum używana od 1500 roku jest przedstawiona poniżej dla zainteresowanych. Sekcje 1.10.32 i 1.10.33 z „de Finibus Bonorum et Malorum” Cicero są również reprodukowane w ich oryginalnej oryginalnej formie, wraz z angielskimi wersjami z tłumaczenia H. Rackhama z 1914 r.</p>
 		<table class="reviewsTable">
   			<tr id="reviewsTableHeader">
     			<th>Rating</th>	
@@ -51,24 +48,36 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
   			</tr>
   			<tr>
     			<td>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span> 
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span> 
           </td>
-   			 	<td>Rick</td>
-    			<td>Super blest you already know</td>
+   			 	<td>Piotr</td>
+    			<td>Dobra stacja, nic do powiedzienia</td>
   			</tr>
   			<tr>
-    			<td>1/5</td>
-    			<td>Terry</td>
-    			<td>Trash</td>
+    			<td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked"></span>
+            <span class="fa fa-star unchecked"></span>
+            <span class="fa fa-star unchecked"></span>
+            <span class="fa fa-star unchecked"></span> 
+          </td>
+    			<td>Zbyszek</td>
+    			<td>Zła stacja, drogo i mało parkingu do tego</td>
   			</tr>
   			<tr>
-  				<td>3/5</td>
-  				<td>Mina</td>
-  				<td>Not bad</td>
+  				<td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star unchecked"></span>
+            <span class="fa fa-star unchecked"></span> 
+          </td>
+  				<td>Lyudomir</td>
+  				<td>Це було посередньо</td>
   			</tr>
 		</table>
 
