@@ -135,9 +135,14 @@ img {max-width:100%}
 		height: 50%;
 	}
 
-	.results_main{
+	.results_container {
 		width: 50%;
 		height: 50%;
+	}
+
+	.results_nav {
+		width: 60%;
+		padding-bottom: 3%;
 	}
 }
 
@@ -158,9 +163,13 @@ img {max-width:100%}
 		height: 65%;
 	}
 
-	.results_main{
+	.results_container{
 		width: 65%;
 		height: 65%;
+	}
+	.results_nav {
+		width: 70%;
+		padding-bottom: 3%;
 	}
 
 }
@@ -184,20 +193,26 @@ img {max-width:100%}
 		height: 100%;
 	}
 
-	.results_main{
+	.results_container{
 		width: 100%;
 		height: 100%;
+	}
+	.results_nav {
+		width: 100%;
+		padding-top: 2%;
+		padding-bottom: 6%;
 	}
 
 }
 
 .registration input{
 	display: inline-block;
-	padding:1%;
+	padding: 6px 10px;
 	width:60%;
-	border-color: rgba(0, 0, 0, .15);
+	/*border-color: rgba(0, 0, 0, .15);*/
     background-color: white;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
+    box-sizing: border-box;
 }
 
 .registration input:focus{
@@ -298,6 +313,18 @@ input[name="nameInput"]{
 
 
 /* Results page css section*/
+.results_container {
+	margin: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	background-color: #f0edeb;
+	/*text-align: center;*/
+	border-radius: 5px;
+}
+
 .results_title {
 	background-color: rgb(248, 244, 244);
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
@@ -306,31 +333,38 @@ input[name="nameInput"]{
 	margin: auto;
 	text-align: left;
 	width: 50%;
+	/*width: 90%;*/
 	height: 20px;
 	padding: 10px;
 }
 
 .map_div {
-	padding-top: 1%;
+	padding-top: 3%;
 	text-align: center;
 	margin: auto;
-	width: 50%;
+	/*width: 50%;*/
+	width: 90%;
+	margin-bottom: 10px;
 }
 
 .results_main {
 	margin: auto;
-	margin-top: 20px;
+	/*margin-top: 20px;*/
+	/*margin-bottom: 4%;*/
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-	width: 50%;
-	height: 500px;
+	width: 90%;
+	height: auto;
+	margin-bottom: 3%;
 	background-color: rgb(248, 244, 244);
 	justify-content: space-evenly;
-	padding: 5px;
+	/*padding: 5px;*/
 }
 
 .results_main div {
 	height: 110px;
-	margin:5px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	margin-right: 5px;
 }
 
 .results_main li {
@@ -343,9 +377,14 @@ input[name="nameInput"]{
 	border: none;
 }
 
+.results_imgs {
+	float:right;
+	width:200px;
+	height:100px;
+}
+
 .single_result {
 	margin: auto;
-
 }
 
 .address_text {
@@ -360,6 +399,12 @@ input[name="nameInput"]{
 .page_select {
 	font-size: 34px;
 	margin-bottom: 10px;
+}
+
+.results_nav {
+	margin: auto;
+	text-align: center;
+	height: auto;
 }
 
 .submission_main {
@@ -399,6 +444,7 @@ input[name="nameInput"]{
 	border-radius: 100px;
 	border: 1px solid red;
 	cursor: pointer;
+	/*margin: auto;*/
 }
 
 .red_next_button {
@@ -562,6 +608,7 @@ individual below
 		width: 65%;
 	}
 }
+
 
 @media screen and (max-width: 600px) {
 	.individualContent {
