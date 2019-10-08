@@ -90,14 +90,12 @@ img {max-width:100%}
 .signin {
 	height: auto;
 	float: left;
-	background-color: none;
 	border-radius: 5px;
 }
 
 .register {
 	height: auto;
 	float: right;
-	background-color: none;
 	border-radius: 5px;
 }
 
@@ -236,7 +234,7 @@ img {max-width:100%}
 
 .registration h2{
 	padding-bottom: 20px;
-	font-style: Arial;
+	
 }
 
 #firstName {
@@ -428,7 +426,7 @@ input[name="nameInput"]{
 .submission_main div {
 	height: 50px;
 	padding: 20px;
-	width:200;
+	width:200px;
 	margin:5px;
 }
 
