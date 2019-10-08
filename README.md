@@ -7,7 +7,10 @@ The website allows users to upload reviews for gas stations in the country of Po
 - Jakub Pawlikowski
 - Anthony Mella
 
-[Individual Sample Page](http://polandgasreviews.me/individual_sample.html)  
-[Registration Page](http://polandgasreviews.me/registration.html)  
-[Search Results Sample Page](http://polandgasreviews.me/results_sample.html)  
-[Submit a review page](http://polandgasreviews.mei/submission.html)  
+
+### Links to all pages:  
+[Individual sample](http://polandgasreviews.me/individual_sample.html)  
+[Registration](http://polandgasreviews.me/registration.html)  
+[Search results sample](http://polandgasreviews.me/results_sample.html)  
+[Submit a review](http://polandgasreviews.me/submission.html)  
+[Search](http://polandgasreviews.me)
