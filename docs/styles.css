@@ -78,7 +78,6 @@ img {max-width:100%}
 	display: flex;
 	height: auto;
 	background-color: #f0edeb;
-	/*display: block;*/
 	text-align: center;
 	border-radius: 5px;
 }
@@ -87,7 +86,6 @@ img {max-width:100%}
 	height: auto;
 	float: left;
 	background-color: none;
-	/*border-right: solid;*/
 	border-radius: 5px;
 }
 
@@ -293,6 +291,7 @@ input[name="nameInput"]{
 }
 /*end of registration page css*/
 
+
 /* Results page css section*/
 .results_title {
 	background-color: rgb(248, 244, 244);
@@ -304,7 +303,6 @@ input[name="nameInput"]{
 	width: 50%;
 	height: 20px;
 	padding: 10px;
-
 }
 
 .map_div {
@@ -323,8 +321,6 @@ input[name="nameInput"]{
 	background-color: rgb(248, 244, 244);
 	justify-content: space-evenly;
 	padding: 5px;
-	/* display: block;
-	text-align: left; */
 }
 
 .results_main div {
@@ -368,7 +364,6 @@ input[name="nameInput"]{
 	font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
 	width: 50%;
 	height: 500px;
-	/*background-color: rgb(248, 244, 244);*/
 	background-color: #f0edeb;
 	justify-content: space-evenly;
 	flex-direction: column;
@@ -381,7 +376,6 @@ input[name="nameInput"]{
 	padding: 20px;
 	width:200;
 	margin:5px;
-	
 }
 
 .submission_main input[type=text] {
@@ -423,7 +417,6 @@ input[name="nameInput"]{
 	background-color: rgb(248, 244, 244);
 	flex-direction: row;
 	align-items: stretch;
-
 }
 
 .search_main div{
@@ -512,9 +505,6 @@ footer {
 	overflow: hidden;
 }
 
-
-
-
 /*
 individual below
 */
@@ -543,7 +533,6 @@ individual below
 
 #individualMap {
 	width: 80%;
-
 }
 
 #individualDesc{
@@ -559,7 +548,6 @@ individual below
 .reviewsTable th, td{
   padding: 8px;
   text-align: left;
-  /*border-bottom: 1px solid #ddd;*/
 }
 
 .reviewsTable tr:nth-child(even){

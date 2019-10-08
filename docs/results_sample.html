@@ -6,11 +6,11 @@
 
         <meta charset="UTF-8"/>
 
-        <!-- <meta http-equiv="refresh" content="3; url=redirect.html"/> -->
-
         <meta name="description" content="some html examples"/>
 
         <meta name="keywords" content="examples"/>
+
+        <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; img-src *;">
 
         <link rel="stylesheet" href="styles.css"/>
 
@@ -19,13 +19,12 @@
 
         <meta name="viewport" content="width=device-width">
 
-        <!-- <link rel="icon" href="favicon.ico"/> -->
-
         <title>Search Results</title>
 
     </head>
 
     <body>
+        <!-- Header with mobile scaling -->
         <div class="header">
             <a id="headerTitle" href="#search.html" class="logo">Gas Station Reviews</a>
             <div class="headerRight">
@@ -42,6 +41,7 @@
             <img src="images/gas_map.png" alt="BEST POLAND GAS MAP" style="margin:auto;">
         </div>
 
+        <!-- Column of results, pictures names and addresses -->
         <div class="results_main">
             <ol>
 
