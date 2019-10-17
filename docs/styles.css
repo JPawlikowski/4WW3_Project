@@ -352,6 +352,7 @@ input[name="nameInput"]{
 	text-align: center;
 	margin: auto;
 	width: 90%;
+	height: 100%;
 	margin-bottom: 10px;
 }
 
