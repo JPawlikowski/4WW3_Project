@@ -315,6 +315,11 @@ input[name="nameInput"]{
 .checkmark input:checked{
 	background-color: #2196F3;
 }
+
+/*default invalid only works for emails in current case*/
+/*.registration input:invalid {
+	background-color: pink;
+}*/
 /*end of registration page css*/
 
 
@@ -347,6 +352,7 @@ input[name="nameInput"]{
 	text-align: center;
 	margin: auto;
 	width: 90%;
+	height: 100%;
 	margin-bottom: 10px;
 }
 
@@ -595,8 +601,15 @@ individual below
 	font-size: 15px;
 }
 
-#individualMap {
+#individualMapImg {
 	width: 80%;
+}
+
+#individualMap {
+	margin: auto;
+	width: 80%;
+	height: 300px;
+	border-radius: 3px;
 }
 
 #individualDesc{

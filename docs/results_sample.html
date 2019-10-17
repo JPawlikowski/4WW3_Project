@@ -40,9 +40,18 @@
         <!-- Starting a main body container -->
         <div class="results_container">
 
-        <div class="map_div">
-            <img src="images/gas_map.png" alt="BEST POLAND GAS MAP" style="margin:auto;">
+        <div class="map_div" id="map">
+            <!--<img src="images/gas_map.png" alt="BEST POLAND GAS MAP" style="margin:auto;">-->
+            <!-- Call the google maps API-->
+
+            <!--<script src="maps.js"></script>-->
         </div>
+        
+        <!-- call the js script to display the map -->
+        <script src="maps.js"></script>
+      
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ&callback=initMap" async defer>
+        </script>
 
         <!-- Column of results, pictures names and addresses -->
         <div class="results_main">
