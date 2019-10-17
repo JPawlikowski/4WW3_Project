@@ -48,6 +48,31 @@
                 Address: <br> <input type="text" name="address" value="Address.." id="address"> <br>
             </div>
 
+            <!-- Script to access the users current location-->
+            <script>
+
+                var position;
+
+                if (navigator.geolocation) {
+					
+                    // retrieve the users position
+                    position = navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
+
+                    } else {
+                        alert('Geolocation is not supported in your browser');
+                    }
+
+                function get_location() {
+                    document.getElementById("submit_location").value = position
+                }
+            </script>
+
+            <div>
+                <input class="red_button" type="submit" value="Use Current Location" id="submit_location" onclick="
+                    this.document.getElementById('address').value = position;
+                    ">
+            </div>
+
             <div>
                 Select an image to upload: <br>
                 <input type="file" name="imgupload" id="imgupload">

@@ -343,11 +343,12 @@ input[name="nameInput"]{
 }
 
 .map_div {
+	position: absolute;
 	padding-top: 3%;
 	text-align: center;
 	margin: auto;
-	width: 90%;
-	height: 100%;
+	width: 50%;
+	height: 25%;
 	margin-bottom: 10px;
 }
 
@@ -430,6 +431,14 @@ input[name="nameInput"]{
 }
 
 .submission_main input[type=text] {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+/* will color the box red if the submission is invalid */
+.submission_main input[type=text]:invalid {
 	width: 50%;
 	padding: 12px 20px;
 	margin: 8px 0;
