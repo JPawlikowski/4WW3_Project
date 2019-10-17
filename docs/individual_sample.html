@@ -21,6 +21,23 @@
 
 <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
+<script>
+      var myLatLng = {lat: 52.233966, lng: 20.984920};
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('individualMap'), {
+          center: myLatLng,
+          zoom: 13
+        });
+        var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map
+      });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ&callback=initMap"
+    async defer></script>
+
 <title>Individual Information</title>
 
 </head>
@@ -41,23 +58,7 @@
     <h3 id="individualAddr" >ul. Grzybowska 73 -- Mirów</h3>
     <!-- <img id="individualMapImg" src="images/poland1.jpg" alt="sample screenshot"> -->
     <div id="individualMap"></div>
-    <script>
-      var myLatLng = {lat: 52.233966, lng: 20.984920};
-
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('individualMap'), {
-          center: myLatLng,
-          //52.233966, 20.984920
-          zoom: 13
-        });
-        var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map
-      });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ&callback=initMap"
-    async defer></script>
+    
 
 		<p id="individualDesc" >Wbrew powszechnemu przekonaniu Lorem Ipsum nie jest zwykłym tekstem. Ma swoje korzenie w klasycznej literaturze łacińskiej z 45 rpne, która ma ponad 2000 lat. Richard McClintock, łaciński profesor w Hampden-Sydney College w Wirginii, spojrzał na jedno z bardziej niejasnych łacińskich słów consectetur z fragmentu Lorem Ipsum i przeglądając cytaty tego słowa w literaturze klasycznej, odkrył niewątpliwe źródło. Lorem Ipsum pochodzi z sekcji 1.10.32 i 1.10.33 „de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) autorstwa Cycerona, napisanej w 45 rpne Ta książka jest traktatem o teorii etyki, bardzo popularnym w okresie renesansu. Pierwsza linia Lorem Ipsum, „Lorem ipsum dolor sit amet ..”, pochodzi z linii z sekcji 1.10.32.
 Standardowa część Lorem Ipsum używana od 1500 roku jest przedstawiona poniżej dla zainteresowanych. Sekcje 1.10.32 i 1.10.33 z „de Finibus Bonorum et Malorum” Cicero są również reprodukowane w ich oryginalnej oryginalnej formie, wraz z angielskimi wersjami z tłumaczenia H. Rackhama z 1914 r.</p>
