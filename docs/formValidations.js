@@ -55,7 +55,7 @@ function validateNameExists(nameId) {
 function validateUserName(userNameId) {
 	var userNameElem = document.getElementById(userNameId);
 	var userNamePattern = /^[a-zA-Z0-9]+$/;
-	if (userNamePattern.test(uerNameElem.value)) {
+	if (userNamePattern.test(userNameElem.value)) {
 		userNameElem.setAttribute("style", "background-color:white");
 		return true;
 	} else {
