@@ -54,7 +54,7 @@ function validateNameExists(nameId) {
 //register user name field
 function validateUserName(userNameId) {
 	var userNameElem = document.getElementById(userNameId);
-	var userNamePattern = /^[a-zA-Z0-9]+$/;
+	var userNamePattern = /^[a-zA-Z0-9@._]+$/;
 	if (userNamePattern.test(userNameElem.value)) {
 		userNameElem.setAttribute("style", "background-color:white");
 		return true;
@@ -108,19 +108,20 @@ function validatePasswordsMatch(passwordId, otherPasswordId) {
 }
 
 //for complete registration form
-function validateRegistration() {
-	var firstNameResult = validateNameExists('registerFirstName');
-	var lastNameResult = validateNameExists('registerLastName');
-	var emailResult = validateEmail("registerEmail");
-	var userNameResult = validateUserName("registerUserName");
-	var checkStatus = document.getElementById("checkEmail");
+function validateRegistration(firstNameId, lastNameId, emailId, userNameId, checkBoxId, firstPassId, secondPassId) {
+	var firstNameResult = validateNameExists(firstNameId);
+	var lastNameResult = validateNameExists(lastNameId);
+	var emailResult = validateEmail(emailId);
+	var userNameResult = validateUserName(userNameId);
+	var checkStatus = document.getElementById(checkBoxId);
 	var emailMatch = true;
-	var passwordResult = validatePassword("registerFirstPass");
-	var otherPasswordResult = validatePassword("registerSecondPass");
-	var passwordsResult = validatePasswordsMatch("registerFirstPass", "registerSecondPass");	
+	var passwordResult = validatePassword(firstPassId);
+	var otherPasswordResult = validatePassword(secondPassId);
+	var passwordsResult = validatePasswordsMatch(firstPassId, secondPassId);	
 	if (checkStatus.checked == true) {
-		emailMatch = userNameEmailMatch("registerUserName", "registerEmail");
+		emailMatch = userNameEmailMatch(userNameId, emailId);
 	}
+	
 	if ((firstNameResult == true) && (lastNameResult == true) && (emailResult == true) && (userNameResult == true) && (emailMatch == true) && (passwordResult == true) && (otherPasswordResult == true) && (passwordsResult == true)){
 		window.alert("registration passed");
 		return true;
