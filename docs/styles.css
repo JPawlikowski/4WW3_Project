@@ -322,7 +322,6 @@ input[name="nameInput"]{
 }*/
 /*end of registration page css*/
 
-
 /* Results page css section*/
 .results_container {
 	padding-top: 10px;
@@ -580,7 +579,8 @@ individual below
 	height: auto;
 	background-color: #f0edeb;
 	border-radius: 5px;
-	display: block;
+	display: flex;
+	flex-direction: column;
 	text-align: center;
 	padding: 10px;
 	clear: both;
