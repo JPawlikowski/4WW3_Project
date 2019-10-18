@@ -325,6 +325,7 @@ input[name="nameInput"]{
 
 /* Results page css section*/
 .results_container {
+	padding-top: 10px;
 	margin: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -348,12 +349,10 @@ input[name="nameInput"]{
 }
 
 .map_div {
-	position: absolute;
 	padding-top: 3%;
-	text-align: center;
 	margin: auto;
-	width: 50%;
-	height: 25%;
+	width: 80%;
+	height: 300px;
 	margin-bottom: 10px;
 }
 
