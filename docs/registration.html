@@ -74,11 +74,13 @@
 				</div>
 				<p>User Name</p>
 				<input type="text" name="username" id="registerUserName" placeholder="example@mail.com">
-				
 				<p>Create Password</p>
-				<input type="password" name="pass" id="registerFirstPass">
+				<div id="passwordToolTip">
+					<input type="password" name="pass" id="registerFirstPass" onfocus="showToolTip('toolTipText');" onblur="hideToolTip('toolTipText');">
+					<span id="toolTipText" style="text-decoration: none">Min: 8 Chars, 1 Upper Case, 1 Number</span>
+				</div>
 				<p>Confirm Password</p>
-				<input type="password" name="pass" id="registerSecondPass">
+				<input type="password" name="pass" id="registerSecondPass" onfocus="showToolTip('toolTipText');" onblur="hideToolTip('toolTipText');">
 				<button type="submit" class="button_1">Create Account</button>
 				
 			</form>

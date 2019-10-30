@@ -131,3 +131,20 @@ function validateRegistration(firstNameId, lastNameId, emailId, userNameId, chec
 	}
 }
 //end of registration form validations
+
+function showToolTip(toolTipId) {
+	document.getElementById(toolTipId).setAttribute("style", "visibility:visible");
+}
+
+function hideToolTip(toolTipId) {
+	document.getElementById(toolTipId).setAttribute("style", "visibility:hidden");
+}
+// function showToolTip(toolTipId) {
+// 	toolTipElem = document.getElementById(toolTipId);
+// 	if(toolTipElem.style.visibility == "hidden") {
+// 		toolTipElem.setAttribute("style", "visibility:visible");
+// 	} else {
+// 		toolTipElem.setAttribute("style", "visibility:hidden");
+// 	}
+// }
+
