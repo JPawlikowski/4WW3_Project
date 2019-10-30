@@ -31,7 +31,7 @@ function validate_address() {
 function validate_name() {
     var name_sub = document.getElementById("name");
 
-    // check if the submitted name matches the regexs
+    // check if the submitted name matches the regex
     if (name_regex.test(name_sub.value)) {
         name_sub.setAttribute("style", "background-color:white");
 		return true;
@@ -44,6 +44,23 @@ function validate_name() {
     }
 }
 
+// validate that the review is not an empty string
+function validate_review() {
+    var review_sub = document.getElementById("review");
+
+    // check if the submitted review matches the regex, we can use the name regex
+    if (name_regex.test(review_sub.value)) {
+        review_sub.setAttribute("style", "background-color:white");
+		return true;
+    } else{
+
+        // If the review does not match the regex, set the box color to pink and return false
+        review_sub.setAttribute("style", "background-color:pink");
+        window.alert("Please enter a review");
+        return false;
+    }
+}
+
 // validate the that the image filetype is a jpeg or a png
 function validate_img() {
 
@@ -52,7 +69,6 @@ function validate_img() {
 
     // check if the submitted name matches the regexs
     if (valid_img_types.test(uploaded_img.value)) {
-        window.alert("image good");
         return true;
         
     } else{
@@ -79,7 +95,7 @@ function validate_rating() {
         return true;
 
     } else {
-        
+        window.alert("Please select a rating")
         return false;
     }
 
@@ -91,12 +107,12 @@ function validate_sub(){
     var addr_valid = validate_address();
     var img_valid = validate_img();
     var rating_valid = validate_rating();
-    var check_array = [name_valid, addr_valid, img_valid, rating_valid];
+    var review_valid = validate_review();
+    var check_array = [name_valid, addr_valid, img_valid, rating_valid, review_valid];
     if (check_array.every(Boolean)){
         window.alert("validation successful");
         return true;
     } else {
-        window.alert("validation unsuccessful");
         return false;
     }
 }
