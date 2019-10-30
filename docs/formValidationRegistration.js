@@ -1,5 +1,7 @@
 //Below is registration form validation
 
+//Note: all html element IDs passed as parameters from function call
+
 //for both signin and register email fields
 function validateEmail(id){
 	var emailElem = document.getElementById(id);
@@ -16,7 +18,7 @@ function validateEmail(id){
 function validatePassword(id) {
 	var passwordElem = document.getElementById(id);
 	//password should be composed of numbers and letters, at least one digit and one upper case letter
-	var passwordPattern = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{8,12}$/;
+	var passwordPattern = /^(?=.*\d)(?=.*[A-Z])[a-zA-Z0-9]{10,20}$/;
 	if (passwordPattern.test(passwordElem.value)) {
 		passwordElem.setAttribute("style", "background-color:white");
 		return true;
@@ -30,11 +32,10 @@ function validatePassword(id) {
 function validateSignIn(emailId, passwordId){
 	var emailResult = validateEmail(emailId);
 	var passwordResult = validatePassword(passwordId);
-	if((emailResult == true) && (emailResult == true)){
-		// showLoader();
+	if((emailResult == true) && (passwordResult == true)){
+		//window.alert("passed");
 		return true;
 	} else {
-		window.alert("failed");
 		return false;
 	}
 }
@@ -96,7 +97,7 @@ function userNameEmailMatch(userNameId, emailId) {
 function validatePasswordsMatch(passwordId, otherPasswordId) {
 	var passwordElem = document.getElementById(passwordId);
 	var otherPasswordElem = document.getElementById(otherPasswordId);
-	if (passwordElem.value == otherPasswordElem.value){
+	if ((passwordElem.value == otherPasswordElem.value) && (passwordElem.value.length !=0 ) && (otherPasswordElem.value.length != 0)){
 		passwordElem.setAttribute("style", "background-color:white");
 		otherPasswordElem.setAttribute("style", "background-color:white");
 		return true;
@@ -121,30 +122,11 @@ function validateRegistration(firstNameId, lastNameId, emailId, userNameId, chec
 	if (checkStatus.checked == true) {
 		emailMatch = userNameEmailMatch(userNameId, emailId);
 	}
-	
 	if ((firstNameResult == true) && (lastNameResult == true) && (emailResult == true) && (userNameResult == true) && (emailMatch == true) && (passwordResult == true) && (otherPasswordResult == true) && (passwordsResult == true)){
-		window.alert("registration passed");
 		return true;
 	} else {
-		window.alert("failed");
 		return false;
 	}
 }
 //end of registration form validations
-
-function showToolTip(toolTipId) {
-	document.getElementById(toolTipId).setAttribute("style", "visibility:visible");
-}
-
-function hideToolTip(toolTipId) {
-	document.getElementById(toolTipId).setAttribute("style", "visibility:hidden");
-}
-// function showToolTip(toolTipId) {
-// 	toolTipElem = document.getElementById(toolTipId);
-// 	if(toolTipElem.style.visibility == "hidden") {
-// 		toolTipElem.setAttribute("style", "visibility:visible");
-// 	} else {
-// 		toolTipElem.setAttribute("style", "visibility:hidden");
-// 	}
-// }
 
