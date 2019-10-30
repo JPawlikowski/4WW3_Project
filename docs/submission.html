@@ -24,6 +24,11 @@
     </head>
 
     <body>
+
+        <!-- Call the submission validation script-->
+        <script type="text/javascript" src="validate_submission.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ" async defer></script>
+
         <!-- Header with mobile scaling -->
         <div class="header">
             <a id="headerTitle" href="/search.html" class="logo">Gas Station Reviews</a>
@@ -40,59 +45,43 @@
         <!-- Review Submission Page, name, address, image and rating -->
         <div class="submission_main"> 
 
-            <div>
-                Name: <br> <input type="text" name="name" value="Name.." id="name"> <br>
-            </div>
+            <form name="submission_form" onsubmit="return validate_sub()" method="post" >
 
-            <div>
-                Address: <br> <input type="text" name="address" value="Address.." id="address"> <br>
-            </div>
-
-            <!-- Script to access the users current location-->
-            <script>
-
-                var position;
-
-                if (navigator.geolocation) {
-					
-                    // retrieve the users position
-                    position = navigator.geolocation.getCurrentPosition(showPosition, showError, optn);
-
-                    } else {
-                        alert('Geolocation is not supported in your browser');
-                    }
-
-                function get_location() {
-                    document.getElementById("submit_location").value = position
-                }
-            </script>
-
-            <div>
-                <input class="red_button" type="submit" value="Use Current Location" id="submit_location" onclick="
-                    this.document.getElementById('address').value = position;
-                    ">
-            </div>
-
-            <div>
-                Select an image to upload: <br>
-                <input type="file" name="imgupload" id="imgupload">
-                <br>
-            </div>
-
-            <div>
-                Rating: <br>
-                <span class="fa fa-thumbs-down" style="color:red;"></span>
-                <input id="terrible" type="radio" name="rating" value="1">
-                <input id="bad" type="radio" name="rating" value="2">
-                <input id="mediocre" type="radio" name="rating" value="3">
-                <input id="good" type="radio" name="rating" value="4">
-                <input id="excellent" type="radio" name="rating" value="5">
-                <span class="fa fa-thumbs-up" style="color:red;"></span>
-            </div>
-
-            <input class="red_button" type="submit" value="submit">
+                <div>
+                    Name: <br> <input type="text" name="name" placeholder="Name.." id="name"> <br>
+                </div>
+    
+                <div>
+                    Address: <br> <input type="text" name="address" placeholder="Address.." id="address"> <br>
+                </div>
+    
+                <div>
+                    <input class="red_button" type="button" onclick="current_position()" value="Use Current Location" id="submit_location">
+                </div>
+    
+                <div>
+                    Select an image to upload: <br>
+                    <input type="file" name="imgupload" id="imgupload">
+                    <br>
+                </div>
+    
+                <div>
+                    Rating: <br>
+                    <span class="fa fa-thumbs-down" style="color:red;"></span>
+                    <input id="terrible" type="radio" name="rating" value="1">
+                    <input id="bad" type="radio" name="rating" value="2">
+                    <input id="mediocre" type="radio" name="rating" value="3">
+                    <input id="good" type="radio" name="rating" value="4">
+                    <input id="excellent" type="radio" name="rating" value="5">
+                    <span class="fa fa-thumbs-up" style="color:red;"></span>
+                </div>
+    
+                <input class="red_button" type="submit" value="submit">
+            
+            </form>
 
         </div>
+
         <footer>
             <p>Gas Station Reviews - 4WW3</p>
         </footer>

@@ -13,6 +13,7 @@ var result5_coords = {lat: 52.2334087, lng: 20.9814705};
 var result6_coords = {lat: 52.2340621, lng: 20.981885};
 var result7_coords = {lat: 52.2328443, lng: 20.9787933};
 
+// Function to show the map+markers on the results_sample page
 function show_results_map() {
     map = new google.maps.Map(document.getElementById('map'), {
     center: warsaw_coords,
@@ -84,7 +85,7 @@ function show_results_map() {
         map: map,
     });
 
-    // Code for the markers, when the user clicks a marker
+    // Code for the marker listeners, when the user clicks a marker
     // A pop up will display info about the gas station
     marker1.addListener('click', function() {
         marker1_infowindow.open(map, marker1);
@@ -114,13 +115,4 @@ function show_results_map() {
         marker7_infowindow.open(map, marker7);
     });
     
-}
-
-//displays the users current position
-function current_position(elementid) {
-    current_map = new google.maps.Map(document.getElementById(elementid), {
-        center: {},
-        zoom: 8
-    });
-
 }
