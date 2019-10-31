@@ -83,7 +83,7 @@ function completeUsername(checkBoxId, emailId, userNameId) {
 function userNameEmailMatch(userNameId, emailId) {
 	var emailElem = document.getElementById(emailId);
 	var userNameElem = document.getElementById(userNameId);
-	if (emailElem.value == userNameElem.value) {
+	if ((emailElem.value == userNameElem.value) && (emailElem.value.length != 0 ) && (userNameElem.value.length != 0)) {
 		emailElem.setAttribute("style", "background-color:white");
 		userNameElem.setAttribute("style", "background-color:white");
 		return true;
