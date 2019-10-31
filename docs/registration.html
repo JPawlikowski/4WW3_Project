@@ -80,8 +80,10 @@ function hideToolTip(toolTipId) {
 					<div id="emailCheckText">
 						<p>Use email as username</p>
 					</div>
+					<!-- check box centers properly on firefox but not on chrome-->
 					<div id="emailCheckBox">
 						<input type="checkbox" id="checkEmail" onClick="completeUsername('checkEmail', 'registerEmail', 'registerUserName');">
+						<!-- below styling can be added to center checkbox on chrome style="margin-left: 45%"-->
 					</div>
 				</div>
 				<p>User Name</p>
@@ -90,7 +92,7 @@ function hideToolTip(toolTipId) {
 				<!--Note: tool tip shows up only above top box (tooltip flipping text boxes seemed messy) -->
 				<div id="passwordToolTip">
 					<input type="password" name="pass" id="registerFirstPass" onfocus="showToolTip('toolTipText');" onblur="hideToolTip('toolTipText');">
-					<span id="toolTipText" style="text-decoration: none">10-20 Chars, 1 Upper Case, 1 Number</span>
+					<span id="toolTipText">10-20 Chars, 1 Upper Case, 1 Number</span>
 				</div>
 				<p>Confirm Password</p>
 				<input type="password" name="pass" id="registerSecondPass" onfocus="showToolTip('toolTipText');" onblur="hideToolTip('toolTipText');">

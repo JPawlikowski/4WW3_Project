@@ -306,11 +306,12 @@ input[name="nameInput"]{
 	margin: auto;
 }
 
-.checkmark {
+
+/*.checkmark {
   height: 30px;
   width: 30px;
   background-color: #eee;
-}
+}*/
 
 .checkmark input:checked{
 	background-color: #2196F3;
@@ -318,13 +319,10 @@ input[name="nameInput"]{
 
 #passwordToolTip {
 	position: relative;
-	/*display: inline-block;*/
-	/*border-bottom: 1px dotted black;*/
 }
 
 #passwordToolTip #toolTipText {
   visibility: hidden;
-  /*width: 120px;*/
   background-color: black;
   color: #fff;
   text-align: center;
@@ -337,16 +335,7 @@ input[name="nameInput"]{
   width: 80%;
   bottom: 100%;
   right: 10%;
-  /*margin-left: -60px;*/
-  /*margin-left: -38%;*/
-  /*margin: auto;*/
 }
-
-/*#passwordToolTip:hover #toolTipText {
-  visibility: visible;
-}*/
-
-
 
 /*end of registration page css*/
 
