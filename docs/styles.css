@@ -337,16 +337,7 @@ input[name="nameInput"]{
   width: 80%;
   bottom: 100%;
   right: 10%;
-  /*margin-left: -60px;*/
-  /*margin-left: -38%;*/
-  /*margin: auto;*/
 }
-
-/*#passwordToolTip:hover #toolTipText {
-  visibility: visible;
-}*/
-
-
 
 /*end of registration page css*/
 
@@ -637,14 +628,10 @@ individual below
 	font-size: 15px;
 }
 
-#individualMapImg {
-	width: 80%;
-}
-
 #individualMap {
 	margin: auto;
-	width: 80%;
-	height: 300px;
+	width: 85%;
+	height: 325px;
 	border-radius: 3px;
 }
 
