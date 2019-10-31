@@ -9,11 +9,12 @@ The website allows users to upload reviews for gas stations in the country of Po
 
 
 ### Links to all pages:  
-[Individual sample](http://polandgasreviews.me/individual_sample.html)  
-[Registration](http://polandgasreviews.me/registration.html)  
-[Search results sample](http://polandgasreviews.me/results_sample.html)  
-[Submit a review](http://polandgasreviews.me/submission.html)  
-[Search](http://polandgasreviews.me)
+[Individual sample](https://polskagasreviews.me/individual_sample.html)  
+[Registration](https://polskagasreviews.me/registration.html)  
+[Search results sample](https://polskagasreviews.me/results_sample.html)  
+[Submit a review](https://polskagasreviews.me/submission.html)  
+[Search](https://polskagasreviews.me)
+note: the site can be accessed with https and without
 
 
 ### Validation:
