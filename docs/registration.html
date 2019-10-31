@@ -55,6 +55,7 @@ function hideToolTip(toolTipId) {
 				<p>Email</p>
 				<input type="email" name="email" id="signInEmail" placeholder="example@mail.com"><br>
 				<p>Password</p>
+				<!-- Note: no tool tip for signin password as existing password should satisfy requirements -->
 				<input type="password" name="pass" id="signInPassword"><br>
 				<button type="submit" class="button_1" >Sign In</button><br>
 				<a href="registration.html" id="forgotPass">Forgot password?</a>
@@ -86,6 +87,7 @@ function hideToolTip(toolTipId) {
 				<p>User Name</p>
 				<input type="text" name="username" id="registerUserName" placeholder="example@mail.com">
 				<p>Create Password</p>
+				<!--Note: tool tip shows up only above top box (tooltip flipping text boxes seemed messy) -->
 				<div id="passwordToolTip">
 					<input type="password" name="pass" id="registerFirstPass" onfocus="showToolTip('toolTipText');" onblur="hideToolTip('toolTipText');">
 					<span id="toolTipText" style="text-decoration: none">10-20 Chars, 1 Upper Case, 1 Number</span>

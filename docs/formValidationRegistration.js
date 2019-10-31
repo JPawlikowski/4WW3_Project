@@ -1,8 +1,9 @@
 //Below is registration form validation
 
 //Note: all html element IDs passed as parameters from function call
+//Note: validation failed for required field makes field input "pink"
 
-//for both signin and register email fields
+//Used for both 'signin' and 'register' email fields
 function validateEmail(id){
 	var emailElem = document.getElementById(id);
 	var emailPattern = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,})+$/;
@@ -14,7 +15,7 @@ function validateEmail(id){
 		return false;
 	}
 }
-//for both signin and register password fields
+//Used for both 'signin' and 'register' password fields
 function validatePassword(id) {
 	var passwordElem = document.getElementById(id);
 	//password should be composed of numbers and letters, at least one digit and one upper case letter
@@ -28,7 +29,7 @@ function validatePassword(id) {
 	}
 }
 
-//for entire sign in section
+//Used for entire sign in section (using above functions)
 function validateSignIn(emailId, passwordId){
 	var emailResult = validateEmail(emailId);
 	var passwordResult = validatePassword(passwordId);
@@ -40,7 +41,7 @@ function validateSignIn(emailId, passwordId){
 	}
 }
 
-//registration first and last name simply cannot be empty
+//registration first and last name cannot be empty
 function validateNameExists(nameId) {
 	var nameElem = document.getElementById(nameId);
 	if ((nameElem.value.length != 0)) {
@@ -108,20 +109,21 @@ function validatePasswordsMatch(passwordId, otherPasswordId) {
 	}
 }
 
-//for complete registration form
+//for complete registration form (combination of above functions
 function validateRegistration(firstNameId, lastNameId, emailId, userNameId, checkBoxId, firstPassId, secondPassId) {
 	var firstNameResult = validateNameExists(firstNameId);
 	var lastNameResult = validateNameExists(lastNameId);
 	var emailResult = validateEmail(emailId);
 	var userNameResult = validateUserName(userNameId);
 	var checkStatus = document.getElementById(checkBoxId);
-	var emailMatch = true;
+	var emailMatch = true;	//default, only needs to be verified if check box is pressed (meaning email and username the same)
 	var passwordResult = validatePassword(firstPassId);
 	var otherPasswordResult = validatePassword(secondPassId);
 	var passwordsResult = validatePasswordsMatch(firstPassId, secondPassId);	
 	if (checkStatus.checked == true) {
 		emailMatch = userNameEmailMatch(userNameId, emailId);
 	}
+	//if all validations passed then return true
 	if ((firstNameResult == true) && (lastNameResult == true) && (emailResult == true) && (userNameResult == true) && (emailMatch == true) && (passwordResult == true) && (otherPasswordResult == true) && (passwordsResult == true)){
 		return true;
 	} else {
