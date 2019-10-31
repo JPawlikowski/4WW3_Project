@@ -2,7 +2,7 @@ var map;
 var current_map;
 
 // Main coordinates for Warsaw, Poland
-var warsaw_coords = {lat: 52.237049, lng: 21.017532};
+var warsaw_coords = {lat: 52.233257, lng: 20.981283};
 
 // Sample lat, long coordinates for each gas station in the results page
 var result1_coords = {lat: 52.2334498, lng: 20.9815617};
@@ -17,7 +17,7 @@ var result7_coords = {lat: 52.2328443, lng: 20.9787933};
 function show_results_map() {
     map = new google.maps.Map(document.getElementById('map'), {
     center: warsaw_coords,
-    zoom: 12
+    zoom: 17
     });
 
     // info windows - hardcoded since no backend
