@@ -17,20 +17,23 @@
 
         <meta name="viewport" content="width=device-width">
 
-        <link rel="shortcut icon" href="favicon.png" type="image/png" />
-
-
         <title>Search</title>
 
     </head>
 
     <body>
+
+        <!-- need to use the geolocation functions-->
+        <script type="text/javascript" src="validate_submission.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ" async defer></script>
+
         <!-- Header with mobile scaling -->
         <div class="header">
-            <a id="headerTitle" href="#search.html" class="logo">Gas Station Reviews</a>
+            <a id="headerTitle" href="index.html" class="logo">Gas Station Reviews</a>
             <div class="headerRight">
-                <a href="/search.html">Search</a>
-                <a href="/registration.html">Register</a>
+                <a href="index.html">Search</a>
+                <a href="registration.html">Register</a>
+                <a href="submission.html">Submit a Review</a>
             </div>
         </div>
 
@@ -43,9 +46,9 @@
                 </strong>
             </div>
 
-            <input type="text" name="search" placeholder="Search by city/address/name..." id="search">
+            <input type="text" name="search" placeholder="Search by city/address/name..." id="address">
             
-            <br>
+            </br>
 
            <!-- Search Criteria -->
             <select>
@@ -60,13 +63,19 @@
                 <option value="Premium">Premium</option>
             </select> 
 
-            <input class="red_button" type="submit" value="Search">
+            <!-- Implemented to just display the address in the bar, when the backend is implemented it will perform the search automatically-->
+            <input class="red_button" type="submit" onclick="current_position()" value="Search by My Location">
+
+            <!-- This will be the implementation when the server logic is ready-->
+            <!--<input class="red_button" type="submit" value="Search">-->
+            <a id="search_button" href="results_sample.html" class="red_button">Search</a>
+
         </div>
 
-        <footer>
-            <p>Gas Station Reviews - 4WW3</p>
-        </footer>
     </body>
 
-</html>
+    <footer>
+        <p>Gas Station Reviews - 4WW3</p>
+    </footer>
 
+</html>

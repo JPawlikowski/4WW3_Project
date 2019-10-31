@@ -316,14 +316,43 @@ input[name="nameInput"]{
 	background-color: #2196F3;
 }
 
-/*default invalid only works for emails in current case*/
-/*.registration input:invalid {
-	background-color: pink;
+#passwordToolTip {
+	position: relative;
+	/*display: inline-block;*/
+	/*border-bottom: 1px dotted black;*/
+}
+
+#passwordToolTip #toolTipText {
+  visibility: hidden;
+  /*width: 120px;*/
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0px;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+  bottom: 100%;
+  right: 10%;
+  /*margin-left: -60px;*/
+  /*margin-left: -38%;*/
+  /*margin: auto;*/
+}
+
+/*#passwordToolTip:hover #toolTipText {
+  visibility: visible;
 }*/
+
+
+
 /*end of registration page css*/
 
 /* Results page css section*/
 .results_container {
+	padding-top: 10px;
 	margin: auto;
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -348,10 +377,9 @@ input[name="nameInput"]{
 
 .map_div {
 	padding-top: 3%;
-	text-align: center;
 	margin: auto;
-	width: 90%;
-	height: 100%;
+	width: 80%;
+	height: 300px;
 	margin-bottom: 10px;
 }
 
@@ -434,6 +462,14 @@ input[name="nameInput"]{
 }
 
 .submission_main input[type=text] {
+	width: 50%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+}
+
+/* will color the box red if the submission is invalid */
+.submission_main input[type=text]:invalid {
 	width: 50%;
 	padding: 12px 20px;
 	margin: 8px 0;
