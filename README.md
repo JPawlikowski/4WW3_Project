@@ -13,7 +13,7 @@ The website allows users to upload reviews for gas stations in the country of Po
 [Registration](https://polskagasreviews.me/registration.html)  
 [Search results sample](https://polskagasreviews.me/results_sample.html)  
 [Submit a review](https://polskagasreviews.me/submission.html)  
-[Search](https://polskagasreviews.me)
+[Search](https://polskagasreviews.me)  
 note: the site can be accessed with https and without
 
 
