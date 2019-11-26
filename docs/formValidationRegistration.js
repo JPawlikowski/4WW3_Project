@@ -33,9 +33,21 @@ function validatePassword(id) {
 function validateSignIn(emailId, passwordId){
 	var emailResult = validateEmail(emailId);
 	var passwordResult = validatePassword(passwordId);
+	console.log("checking sign in");
 	if((emailResult == true) && (passwordResult == true)){
-		//window.alert("passed");
-		return true;
+		//only submit if email exists
+		var queryEmailResult = queryEmailCheck('checkEmail.php', myFunction, emailId);
+		console.log(queryEmailResult);
+		
+		var queryPasswordResult = queryPasswordCheck('checkPassword.php', myFunction, passwordId);
+		console.log(queryPasswordCheck);
+
+		//NOTE PASSWORD CHECK REQUIRES ENCRYPTION
+		if (queryEmailResult && queryPasswordCheck) {
+			return true;
+		} else {
+			return false;
+		}
 	} else {
 		return false;
 	}
@@ -125,7 +137,14 @@ function validateRegistration(firstNameId, lastNameId, emailId, userNameId, chec
 	}
 	//if all validations passed then return true
 	if ((firstNameResult == true) && (lastNameResult == true) && (emailResult == true) && (userNameResult == true) && (emailMatch == true) && (passwordResult == true) && (otherPasswordResult == true) && (passwordsResult == true)){
-		return true;
+		var newUserResult = submitNewUser('registerNewUser.php', myFunction, firstNameId, lastNameId, userNameId, emailId, firstPassId);
+		//successfull creation of new user 
+		if (newUserResult) {
+			return true;
+		} else {
+			//add something here if creating a new user fails
+			return false;
+		}
 	} else {
 		return false;
 	}

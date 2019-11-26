@@ -1,7 +1,20 @@
 <!DOCTYPE HTML>
 
 <html lang="en">
-
+ <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "dummyPassword";
+  $database = "exampleUsers";
+  try {
+    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //echo "connected";
+    }
+  catch(PDOException $e) {
+    echo "failed" . $e->getMessage();
+  }
+ ?>
 <head>
 
 <meta charset="UTF-8"/>
@@ -54,13 +67,62 @@
 <!-- Content of individual details page -->
 <div class="individualContent">
 		<noscript>Please enable javascript</noscript>
-		<h1 id="individualTitle">Petro Poland</h1>
-    <h3 id="individualAddr" >ul. Grzybowska 73 -- Mirów</h3>
+		<h1 id="individualTitle">
+      <?php
+        $stmt = $conn->query("SELECT name FROM `gasStations` WHERE id = 5");
+        while ($row = $stmt->fetch()) {
+          echo $row[0];
+        }
+      ?>  
+    </h1>
+    
+    <h3 id="individualAddr">
+      <?php
+      $stmt = $conn->query("SELECT address FROM `gasStations` WHERE id = 5");
+      while ($row = $stmt->fetch()) {
+        echo $row[0];
+      }
+      ?>
+    </h3> 
     <div id="individualMap"></div>
     
-		<p id="individualDesc" >Wbrew powszechnemu przekonaniu Lorem Ipsum nie jest zwykłym tekstem. Ma swoje korzenie w klasycznej literaturze łacińskiej z 45 rpne, która ma ponad 2000 lat. Richard McClintock, łaciński profesor w Hampden-Sydney College w Wirginii, spojrzał na jedno z bardziej niejasnych łacińskich słów consectetur z fragmentu Lorem Ipsum i przeglądając cytaty tego słowa w literaturze klasycznej, odkrył niewątpliwe źródło. Lorem Ipsum pochodzi z sekcji 1.10.32 i 1.10.33 „de Finibus Bonorum et Malorum” (The Extremes of Good and Evil) autorstwa Cycerona, napisanej w 45 rpne Ta książka jest traktatem o teorii etyki, bardzo popularnym w okresie renesansu. Pierwsza linia Lorem Ipsum, „Lorem ipsum dolor sit amet ..”, pochodzi z linii z sekcji 1.10.32.
-Standardowa część Lorem Ipsum używana od 1500 roku jest przedstawiona poniżej dla zainteresowanych. Sekcje 1.10.32 i 1.10.33 z „de Finibus Bonorum et Malorum” Cicero są również reprodukowane w ich oryginalnej oryginalnej formie, wraz z angielskimi wersjami z tłumaczenia H. Rackhama z 1914 r.</p>
-		<table class="reviewsTable">
+    <p id = "individualDesc"> 
+      <?php
+      //query for review should be by address which is a variable*
+      $stmt = $conn->query("SELECT review FROM `gasStations` WHERE id = 5");
+      while ($row = $stmt->fetch()) {
+        echo $row[0];
+      }
+      ?> 
+    </p>
+
+    <table class="reviewsTable">
+      <tr id="reviewsTableHeader">
+        <th>Rating</th> 
+        <th>User</th>
+        <th>Description</th>
+      </tr>
+      <?php
+      //query for review should be by address which is a variable*
+      $stmt = $conn->query("SELECT rating FROM `gasStations` WHERE id >= 5");
+      while ($row = $stmt->fetch()) {
+        $rate = (int)$row[0];
+       echo "<tr>";
+         echo "<td>";
+           for ($x = 0; $x < $rate; $x++) {
+             echo '<span class="fa fa-star checked"></span>';
+           }
+         echo "</td>";
+       //the below should also be based on db query, waiting on final tables   
+         echo "<td>Piotr</td>";
+         echo "<td>Dobra stacja, nic do powiedzienia</td>";
+       echo "</tr>";
+     }
+      ?>
+    </tr>
+
+		</table>
+		<!-- <table class="reviewsTable">
   			<tr id="reviewsTableHeader">
     			<th>Rating</th>	
     			<th>User</th>
@@ -99,7 +161,7 @@ Standardowa część Lorem Ipsum używana od 1500 roku jest przedstawiona poniż
   				<td>Lyudomir</td>
   				<td>Це було посередньо</td>
   			</tr>
-		</table>
+		</table> -->
 
 	</div>
 
