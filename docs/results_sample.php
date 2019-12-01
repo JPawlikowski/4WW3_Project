@@ -5,7 +5,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "dummyPassword";
-        $database = "exampleUsers";
+        $database = "mina";
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -73,26 +73,37 @@
         <div class="results_main">
             <ol>
                 <?php
-                //execute query
-                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE id >= 5");
+                //change this to based on search information
+                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE gasid >= 1");
                 while ($row = $stmt->fetch()) {
+                    $gasNum = (int)$row[0];
                     $name = $row[1];
                     $addr = $row[2];
-                    $rate = (int)$row[3];
-                    echo '<li>';
-                        echo '<div>';
-                            echo '<a href="individual_sample.php">' . $name . '</a>';
-                            //image from s3 bucket here specified by url
-                            echo '<img class="results_imgs" src="https://4ww3a3.s3.us-east-2.amazonaws.com/gradeScale.jpg" alt="BEST POLAND GAS">';
+                    $desc = $row[3];
+                    $rate = (int)$row[4];
+                    //echo $gasNum;
+                    $substmt = $conn->query("SELECT imageLink FROM `Reviews` WHERE gasid = $gasNum");
+                    //only gas stations which statisfy query conditions
+                    while ($info = $substmt->fetch()) {
+                        $imgLink = $info[0];
+                        echo '<li>';
+                            echo '<div>';
+                                //name from DB
+                                echo '<a href="individual_sample.php">' . $name . '</a>';
+                                //image from s3 bucket here specified by url
+                                echo '<img class="results_imgs" src="https://4ww3a3.s3.us-east-2.amazonaws.com/'.$imgLink.'"'.' alt="BEST POLAND GAS">';
                             
-                            echo '<br/>';
-                            for ($x = 0; $x < $rate; $x++) {
-                                echo '<span class="fa fa-star checked"></span>';
-                            }
-                            echo '<br/>';
-                            echo '<div class="address_text">'. $addr . '</div>';
-                        echo '</div>';
-                    echo '</li>';
+                                echo '<br/>';
+                                //number of stars based on 'rating' integer from DB
+                                for ($x = 0; $x < $rate; $x++) {
+                                    echo '<span class="fa fa-star checked"></span>';
+                                }
+                                echo '<br/>';
+                                //address from DB
+                                echo '<div class="address_text">'. $addr . '</div>';
+                            echo '</div>';
+                        echo '</li>';
+                    }
                 }
                 ?>
             </ol>
