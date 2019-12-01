@@ -48,7 +48,7 @@ try {
 		//die('Error:' . $e->getMessage());
 		echo 'False';
 	}
-	//after upload complete redirect to submission page
+	//after upload complete redirect to sample results page
 	header("Location: http://192.168.64.2/4WW3_Project/docs/results_sample.php");
 	exit();
 ?>
