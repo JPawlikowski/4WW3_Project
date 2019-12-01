@@ -4,9 +4,10 @@ require 'vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
+// $fileName = $_REQUEST["file"];
+// $imageId = $_REQUEST["imgId"];
+
 $bucketName = '4ww3a3';
-$IAM_KEY = 'AKIA2BUVB2TUHYZGAXZS';
-$IAM_SECRET = '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';
 
 try {
 		// You may need to change the region. It will say in the URL when the bucket is open
@@ -27,12 +28,12 @@ try {
 		die("Error: " . $e->getMessage());
 	}
 
-	$keyName = basename($_FILES["fileToUpload"]['name']);
+	$keyName = basename($_FILES["imgupload"]['name']);
 	$pathInS3 = 'https://s3.us-east-2.amazonaws.com/' . $bucketName . '/' . $keyName;
 
 	try {
 		// Uploaded:
-		$file = $_FILES["fileToUpload"]['tmp_name'];
+		$file = $_FILES["imgupload"]['tmp_name'];
 		$s3->putObject(
 			array(
 				'Bucket'=>$bucketName,
@@ -42,10 +43,12 @@ try {
 			)
 		);
 	} catch (S3Exception $e) {
-		die('Error:' . $e->getMessage());
+		//die('Error:' . $e->getMessage());
+		echo 'False';
 	} catch (Exception $e) {
-		die('Error:' . $e->getMessage());
+		//die('Error:' . $e->getMessage());
+		echo 'False';
 	}
-	echo 'Done';
+	echo 'True';
 
 ?>
