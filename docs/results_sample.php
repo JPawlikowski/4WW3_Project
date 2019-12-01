@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
     <?php
         $servername = "localhost";
         $username = "root";
@@ -10,6 +9,7 @@
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //additional echo for debugging
             //echo "connected";
         }
         catch(PDOException $e) {
@@ -73,17 +73,18 @@
         <div class="results_main">
             <ol>
                 <?php
+                //execute query
                 $stmt = $conn->query("SELECT * FROM `gasStations` WHERE id >= 5");
                 while ($row = $stmt->fetch()) {
-                    //echo $row[3];
                     $name = $row[1];
                     $addr = $row[2];
                     $rate = (int)$row[3];
                     echo '<li>';
                         echo '<div>';
                             echo '<a href="individual_sample.php">' . $name . '</a>';
-                            //getting images from s3 bucket still TO DO
-                            echo '<img class="results_imgs" src="images/poland1.jpg" alt="BEST POLAND GAS">';
+                            //image from s3 bucket here specified by url
+                            echo '<img class="results_imgs" src="https://4ww3a3.s3.us-east-2.amazonaws.com/gradeScale.jpg" alt="BEST POLAND GAS">';
+                            
                             echo '<br/>';
                             for ($x = 0; $x < $rate; $x++) {
                                 echo '<span class="fa fa-star checked"></span>';
@@ -95,119 +96,7 @@
                 }
                 ?>
             </ol>
-
         </div>
-
-        <!-- Column of results, pictures names and addresses -->
-        <!-- <div class="results_main">
-            <ol>
-
-                <li>
-                    <div id="gas_result1">
-                        <a href="individual_sample.html"> Petro Poland</a> 
-                        <img class="results_imgs" src="images/poland1.jpg" alt="BEST POLAND GAS"> 
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr1">ul. Grzybowska 73 <br/>Mirów</div>
-                    </div>
-                </li>
-
-                <li>
-                    <div id="gas_result2">
-                        Poland Esso 
-                        <img class="results_imgs" src="images/poland2.jpg" alt="BEST POLAND GAS"> 
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr2">ul. Grzybowska 74 <br/>Mirów</div>
-                    </div> 
-                </li>
-
-                <li>
-                    <div id="gas_result3">
-                        Poland Shell 
-                        <img class="results_imgs" src="images/poland3.jpg" alt="BEST POLAND GAS">
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr3">ul. Grzybowska 75 <br/>Mirów</div>
-                    </div>
-                </li>
-
-                <li>
-                    <div id="gas_result4">
-                        Tylers Gas
-                        <img class="results_imgs" src="images/poland4.jpg" alt="BEST POLAND GAS">
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr4">ul. Grzybowska 76 <br/>Mirów</div>
-                    </div>
-                </li>
-
-                <li>
-                    <div id="gas_result5">
-                        Poland Esso 
-                        <img class="results_imgs" src="images/poland2.jpg" alt="BEST POLAND GAS"> 
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr5">ul. Grzybowska 77 <br/>Mirów</div>
-                    </div> 
-                </li>
-
-                <li>
-                    <div id="gas_result6">
-                        Poland Shell 
-                        <img class="results_imgs" src="images/poland3.jpg" alt="BEST POLAND GAS">
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr6">ul. Grzybowska 78 <br/>Mirów</div>
-                    </div>
-                </li>
-                
-                <li>
-                    <div id="gas_result7">
-                        Tylers Gas
-                        <img class="results_imgs" src="images/poland4.jpg" alt="BEST POLAND GAS">
-                        <br/>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <br/>
-                        <div class="address_text" id="gas_addr7">ul. Grzybowska 79 <br/>Mirów</div>
-                    </div>
-                </li>
-            </ol>
-        </div> -->
         <!-- Next and previous buttons-->
             <div class="results_nav" >
                 <a class="red_button" >&laquo; Previous</a>

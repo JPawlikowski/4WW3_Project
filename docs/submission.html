@@ -21,38 +21,6 @@
 
         <title>Submit a review</title>
 
-        <script type="text/javascript">
-            var rr = false;
-
-            function uploadImageS3(urlBase, cFunction, imageId) {
-                rr = false;
-                var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    //callback function passed as param
-                    cFunction(this);
-                }
-            };
-            //get image name value
-            var str = document.getElementById(imageId).value;
-            //add variables to ajax url as parameter
-            var completeUrl = urlBase+"?file="+str+"&imgId="+imageId;
-            xhttp.open("GET", completeUrl, false);
-            xhttp.send();
-            return rr;
-            }
-
-            function myFunction(xhttp) {
-                document.getElementById("testButton").innerHTML = xhttp.responseText;
-                if (xhttp.responseText == 'true') {
-                    rr = true;
-                } else {
-                    rr = false;
-                }
-            }
-
-        </script>
-
     </head>
 
     <body>
@@ -74,8 +42,6 @@
         <div class="results_title">
             <strong>Upload a review</strong>
         </div>
-
-    <button id="testButton" onclick="return uploadImageS3('s3upload.php', myFunction, 'imgupload')">tester</button><br> 
 
         <!-- Review Submission Page, name, address, image and rating -->
         <div class="submission_main"> 

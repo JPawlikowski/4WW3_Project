@@ -4,10 +4,8 @@ require 'vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
 
-// $fileName = $_REQUEST["file"];
-// $imageId = $_REQUEST["imgId"];
-
 $bucketName = '4ww3a3';
+
 
 try {
 		// You may need to change the region. It will say in the URL when the bucket is open
@@ -39,6 +37,7 @@ try {
 				'Bucket'=>$bucketName,
 				'Key' =>  $keyName,
 				'SourceFile' => $file,
+				'ACL' => 'public-read',
 				'StorageClass' => 'REDUCED_REDUNDANCY'
 			)
 		);
@@ -49,6 +48,7 @@ try {
 		//die('Error:' . $e->getMessage());
 		echo 'False';
 	}
-	echo 'True';
-
+	//after upload complete redirect to submission page
+	header("Location: http://192.168.64.2/4WW3_Project/docs/results_sample.php");
+	exit();
 ?>
