@@ -1,7 +1,6 @@
 <?php
 session_start();
 $param = $_REQUEST["param"];
-//$email = "chadi@mina.ca";
 
 $servername = "localhost";
 $username = "root";

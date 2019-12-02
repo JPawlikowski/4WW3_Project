@@ -5,7 +5,6 @@ $email = $_REQUEST["mail"];
 $usern = $_REQUEST["usern"];
 $lastn = $_REQUEST['lastn'];
 $pass = $_REQUEST["pass"];
-//$email = "chadi@mina.ca";
 
 $servername = "localhost";
 $username = "root";

@@ -55,7 +55,7 @@
         <!-- Review Submission Page, name, address, image and rating -->
         <div class="submission_main"> 
 
-            <form name="submission_form" onsubmit="return validate_sub()" method="post" >
+            <form name="submission_form" onsubmit="return validate_sub()" action="s3upload.php" method="post" enctype="multipart/form-data">
 
                 <div>
                     Name: <br> <input type="text" name="name" placeholder="Name.." id="name"> <br>
