@@ -92,7 +92,7 @@
                         echo '<li>';
                             echo '<div>';
                                 //name from DB
-                                echo '<a href="individual_sample.php">' . $name . '</a>';
+                                echo sprintf('<a href="individual_sample.php?name=%s">', $gasNum) . $name . '</a>';
                                 //image from s3 bucket here specified by url
                                 echo '<img class="results_imgs" src="https://4ww3a3.s3.us-east-2.amazonaws.com/'.$imgLink.'"'.' alt="BEST POLAND GAS">';
                             
