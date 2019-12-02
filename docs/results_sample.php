@@ -5,8 +5,8 @@
         session_start();
         $servername = "localhost";
         $username = "root";
-        $password = "minamina123";
-        $database = "mina";
+        $password = "dummyPassword";
+        $database = "gasStationsMain";
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

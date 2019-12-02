@@ -1,9 +1,9 @@
 <?php
 session_start();
 $servername = "localhost";
-$database = "mina";
+$database = "gasStationsMain";
 $username = "root";
-$password = "minamina123";
+$password = "dummyPassword";
 
 // get the args from the submission page
 // $submission_info = $_REQUEST["submission_info"];
