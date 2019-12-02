@@ -2,10 +2,11 @@
 
 <html lang="en">
     <?php
+        session_start();
         $servername = "localhost";
         $username = "root";
         $password = "dummyPassword";
-        $database = "mina";
+        $database = "gasStationsMain";
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -74,7 +75,9 @@
             <ol>
                 <?php
                 //change this to based on search information
-                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE gasid >= 1");
+                $searchInput = $_SESSION["searchKey"];
+
+                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE (name like '$searchInput') OR (address like '$searchInput')");
                 while ($row = $stmt->fetch()) {
                     $gasNum = (int)$row[0];
                     $name = $row[1];
@@ -89,7 +92,7 @@
                         echo '<li>';
                             echo '<div>';
                                 //name from DB
-                                echo '<a href="individual_sample.php">' . $name . '</a>';
+                                echo sprintf('<a href="individual_sample.php?name=%s">', $gasNum) . $name . '</a>';
                                 //image from s3 bucket here specified by url
                                 echo '<img class="results_imgs" src="https://4ww3a3.s3.us-east-2.amazonaws.com/'.$imgLink.'"'.' alt="BEST POLAND GAS">';
                             

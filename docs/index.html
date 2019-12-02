@@ -21,7 +21,47 @@
 
     </head>
 
+
     <body>
+
+        <script type="text/javascript">
+
+            var globBool = false;
+
+            function searchCFunction(xhttp) {
+                document.getElementById("testButton").innerHTML = xhttp.responseText;
+                if (xhttp.responseText == 'true') {
+                    globBool = true;
+                } else {
+                    globBool = false;
+                }
+            }
+
+            function querySearchResults(searchCFunction) { 
+                globBool = false;
+
+                var xhttp = new XMLHttpRequest();
+
+                xhttp.onreadystatechange = function() {
+
+                    if (this.readyState == 4 && this.status == 200) {
+                        //callback function passed as param
+                        searchCFunction(this);
+                    }
+                };
+
+                var searchFor = "searchQuery.php?find=" + document.getElementById("searchInput").value;
+
+                xhttp.open("POST", searchFor, false);
+
+                console.log(searchFor);
+
+                xhttp.send(searchFor);
+
+                return globBool;
+            }
+            
+        </script>
 
         <!-- need to use the geolocation functions-->
         <script type="text/javascript" src="validate_submission.js"></script>
@@ -46,7 +86,7 @@
                 </strong>
             </div>
 
-            <input type="text" name="search" placeholder="Search by city/address/name..." id="address">
+            <input type="text" name="search" placeholder="Search by city/address/name..." id="searchInput">
             
             </br>
 
@@ -65,10 +105,7 @@
 
             <!-- Implemented to just display the address in the bar, when the backend is implemented it will perform the search automatically-->
             <input class="red_button" type="submit" onclick="current_position()" value="Search by My Location">
-
-            <!-- This will be the implementation when the server logic is ready-->
-            <!--<input class="red_button" type="submit" value="Search">-->
-            <a id="search_button" href="results_sample.php" class="red_button">Search</a>
+            <a id="search_button" href="results_sample.php" onclick="querySearchResults(searchCFunction)" class="red_button" type="submit">Search</a> 
 
         </div>
 

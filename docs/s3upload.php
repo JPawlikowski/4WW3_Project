@@ -6,8 +6,11 @@ use Aws\S3\Exception\S3Exception;
 
 $bucketName = '4ww3a3';
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c78207850f79d01934c875e9b746ad3ea2f9d836
 try {
 		// You may need to change the region. It will say in the URL when the bucket is open
 		// and on creation.
@@ -50,6 +53,6 @@ try {
 		echo 'False';
 	}
 	//after upload complete redirect to sample results page
-	header("Location: http://192.168.64.2/4WW3_Project/docs/results_sample.php");
+	header("Location: https://polskagasreviews.me/4WW3_Project/docs/results_sample.php");
 	exit();
 ?>
