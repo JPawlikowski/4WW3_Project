@@ -3,10 +3,11 @@
 <html lang="en">
 
     <?php
+        session_start();
         $servername = "localhost";
         $username = "root";
-        $password = "dummyPassword";
-        $database = "exampleUsers";
+        $password = "minamina123";
+        $database = "mina";
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -73,12 +74,15 @@
         <div class="results_main">
             <ol>
                 <?php
-                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE id >= 5");
+
+                $searchInput = $_SESSION["searchKey"];
+
+                $stmt = $conn->query("SELECT * FROM `gasStations` WHERE (name like '$searchInput') OR (address like '$searchInput')");
                 while ($row = $stmt->fetch()) {
-                    //echo $row[3];
+                    //echo $row[4];
                     $name = $row[1];
                     $addr = $row[2];
-                    $rate = (int)$row[3];
+                    $rate = (int)$row[4];
                     echo '<li>';
                         echo '<div>';
                             echo '<a href="individual_sample.php">' . $name . '</a>';

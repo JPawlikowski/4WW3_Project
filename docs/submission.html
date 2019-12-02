@@ -25,6 +25,12 @@
 
     <body>
 
+        <script>
+            function getsuggestion(suggest) {
+
+            }
+        </script>
+
         <!-- Call the submission validation script-->
         <script type="text/javascript" src="validate_submission.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ" async defer></script>
@@ -42,6 +48,9 @@
         <div class="results_title">
             <strong>Upload a review</strong>
         </div>
+
+        <button id="testButton" onclick="return store_submission(callBackFunction)">tester</button><br> 
+		<!-- <button id="testButtoN" onclick="return queryPasswordCheck('checkPassword.php', myFunction, 'signInPassword')">tester</button><br> -->
 
         <!-- Review Submission Page, name, address, image and rating -->
         <div class="submission_main"> 
