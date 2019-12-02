@@ -48,6 +48,6 @@ try {
 		echo 'False';
 	}
 	//after upload complete redirect to sample results page
-	header("Location: http://192.168.64.2/4WW3_Project/docs/results_sample.php");
+	header("Location: https://polskagasreviews.me/4WW3_Project/docs/results_sample.php");
 	exit();
 ?>
