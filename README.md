@@ -27,6 +27,9 @@ The database design schema contains three tables: gasStations, Reviews, and User
 - Reviews fields: uid, gasid, rating, review, imagelink.
 - Users feilds: uid, email, userName, password, firstName, lastName.
 
+### Additional usage notes:  
+The database is populated with 2 gas stations : "Polska Petro" and "Orlen Plus", searching for these will return results.  
+There are 2 users in the database which can log in, they are chad@mac.ca and dave@mac.ca both with password "Password123"
 
 ### Link to repository:  
 [4WW3 Repo](https://github.com/JPawlikowski/4WW3_Project)
