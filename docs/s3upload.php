@@ -6,11 +6,7 @@ use Aws\S3\Exception\S3Exception;
 
 $bucketName = '4ww3a3';
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> c78207850f79d01934c875e9b746ad3ea2f9d836
 try {
 		// You may need to change the region. It will say in the URL when the bucket is open
 		// and on creation.
