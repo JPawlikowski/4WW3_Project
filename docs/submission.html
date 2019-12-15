@@ -25,6 +25,12 @@
 
     <body>
 
+        <script>
+            function getsuggestion(suggest) {
+
+            }
+        </script>
+
         <!-- Call the submission validation script-->
         <script type="text/javascript" src="validate_submission.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWt_DkIlWbveDMzC_m7eZ8t4jKtmzxcQ" async defer></script>
@@ -46,7 +52,7 @@
         <!-- Review Submission Page, name, address, image and rating -->
         <div class="submission_main"> 
 
-            <form name="submission_form" onsubmit="return validate_sub()" method="post" >
+            <form name="submission_form" onsubmit="return validate_sub()" action="s3upload.php" method="post" enctype="multipart/form-data">
 
                 <div>
                     Name: <br> <input type="text" name="name" placeholder="Name.." id="name"> <br>

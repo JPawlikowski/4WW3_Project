@@ -24,13 +24,82 @@
 <script type="text/javascript" src="formValidationRegistration.js"></script>
 <!-- Small page specific functions internal to .html file -->
 <script type="text/javascript">
-		function showToolTip(toolTipId) {
+	var rr = false;
+
+	function showToolTip(toolTipId) {
 	document.getElementById(toolTipId).setAttribute("style", "visibility:visible");
 }
-
-function hideToolTip(toolTipId) {
+	function hideToolTip(toolTipId) {
 	document.getElementById(toolTipId).setAttribute("style", "visibility:hidden");
 }
+
+	function queryEmailCheck(urlBase, cFunction, emailId) { 
+		rr = false;
+  		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+    			//callback function passed as param
+      			cFunction(this);
+    		}
+  		};
+  		//get email value
+  		var str = document.getElementById(emailId).value;
+  		//add variables to ajax url as parameter
+  		var completeUrl = urlBase+"?param="+str;
+  		xhttp.open("GET", completeUrl, false);
+  		xhttp.send();
+  		return rr;
+}
+
+	function queryPasswordCheck(urlBase, cFunction, passwordId) {
+		rr = false;
+  		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+    			//callback function passed as param
+      			cFunction(this);
+    		}
+  		};
+  		//get password value
+  		var str = document.getElementById(passwordId).value;
+  		//add variables to ajax url as parameter
+  		var completeUrl = urlBase+"?param="+str;
+  		xhttp.open("GET", completeUrl, false);
+  		xhttp.send();
+  		return rr;
+	}
+
+	function submitNewUser(urlBase, cFunction, firstNameId, lastNameId, userNameId, emailId, passwordId) {
+		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+    			//callback function passed as param
+      			cFunction(this);
+    		}
+  		};
+  		//get values form register input
+  		var pass = document.getElementById(passwordId).value;
+  		var email = document.getElementById(emailId).value;
+  		var firstName = document.getElementById(firstNameId).value;
+  		var lastName = document.getElementById(lastNameId).value;
+  		var userName = document.getElementById(userNameId).value;
+  		//add variables to ajax url as parameter
+  		var completeUrl = urlBase+"?firstn="+firstName+"&lastn="+lastName+"&mail="+email+"&usern="+userName+"&pass="+pass;
+  		console.log(completeUrl);
+  		xhttp.open("GET", completeUrl, false);
+  		xhttp.send(completeUrl);
+  		return rr;
+	}
+
+	function myFunction(xhttp) {
+  		document.getElementById("testButton").innerHTML = xhttp.responseText;
+  		if (xhttp.responseText == 'true') {
+  			rr = true;
+  		} else {
+  			rr = false;
+  		}
+	}
+
 </script>
 
 </head>
@@ -50,7 +119,7 @@ function hideToolTip(toolTipId) {
 	<section>
 		<div class="registration">
 		<div class="signin">
-			<form name="signInForm" onsubmit="return validateSignIn('signInEmail', 'signInPassword')">
+			<form name="signInForm" action="https://polskagasreviews.me/4WW3_Project/docs/index.html" onsubmit="return validateSignIn('signInEmail', 'signInPassword')">
 				<h2>Sign In</h2>
 				<p>Email</p>
 				<input type="email" name="email" id="signInEmail" placeholder="example@mail.com"><br>
@@ -58,11 +127,12 @@ function hideToolTip(toolTipId) {
 				<!-- Note: no tool tip for signin password as existing password should satisfy requirements -->
 				<input type="password" name="pass" id="signInPassword"><br>
 				<button type="submit" class="button_1" >Sign In</button><br>
-				<a href="registration.html" id="forgotPass">Forgot password?</a>
+				
+				<a href="registration.html" id="forgotPass" >Forgot password?</a>
 			</form>
 		</div>
 		<div class="register">
-			<form name="registerForm" onsubmit="return validateRegistration('registerFirstName','registerLastName', 'registerEmail', 'registerUserName', 'checkEmail', 'registerFirstPass', 'registerSecondPass')">
+			<form name="registerForm" action="https://polskagasreviews.me/4WW3_Project/docs/index.html" onsubmit="return validateRegistration('registerFirstName','registerLastName', 'registerEmail', 'registerUserName', 'checkEmail', 'registerFirstPass', 'registerSecondPass')">
 				<h2>Create an Account</h2>
 				<div id="firstName">
 					<p>First Name</p>
