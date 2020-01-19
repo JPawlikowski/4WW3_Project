@@ -10,6 +10,11 @@ const address_regex = /([a-zA-Z0-9_\.\-\,]+)\s([a-zA-Z0-9_\.\-\,]+)\s([a-zA-Z0-9
 // valid image upload types
 const valid_img_types = /(\.jpg|\.jpeg|\.png)$/;
 
+// global variables for callback functions
+var rr = false;
+var rrUser = false;
+var isUserLoggedIn = false;
+
 // validate that the address is a valid address
 function validate_address() {
     var address = document.getElementById("address");
@@ -101,18 +106,93 @@ function validate_rating() {
 
 }
 
+// callback functions
+function callBackFunction(xhttp) {
+    document.getElementById("testButton").innerHTML = xhttp.responseText;
+    if (xhttp.responseText == 'User is not logged in') {
+        window.alert("Please log in before submitting a review.");
+    }
+    else if (xhttp.responseText == 'true') {
+        rr = true;
+    } else {
+        rr = false;
+    }
+}
+
+// Function is responsible for calling the php script, that stores the submission in the database
+function store_submission(callBackFunction) {
+
+    rr = false;
+
+    var terrible = document.getElementById("terrible").checked;
+    var bad = document.getElementById("bad").checked;
+    var mediocre = document.getElementById("mediocre").checked;
+    var good = document.getElementById("good").checked;
+    var excellent = document.getElementById("excellent").checked;
+    var buttons_checked = [terrible, bad, mediocre, good, excellent];
+
+    // Create a new XMLhttpRequest
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            //callback function passed as param
+            callBackFunction(this);
+        }
+      };
+
+    var payload = "submission_controller.php?name=" + document.getElementById("name").value + "&addr=" + document.getElementById("address").value + "&review=" + document.getElementById("review").value + "&img_name=" + document.getElementById("imgupload").value + "&rating=" + String(buttons_checked.indexOf(true)+1);
+    console.log(payload);
+    xhttp.open("POST", payload, false);
+    xhttp.send(payload);
+
+    return false;
+    
+}
+
+function checkSession(userCallback) {
+
+    rrUser = false;
+
+    var terrible = document.getElementById("terrible").checked;
+    var bad = document.getElementById("bad").checked;
+    var mediocre = document.getElementById("mediocre").checked;
+    var good = document.getElementById("good").checked;
+    var excellent = document.getElementById("excellent").checked;
+    var buttons_checked = [terrible, bad, mediocre, good, excellent];
+
+    // Create a new XMLhttpRequest
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            //callback function passed as param
+            userCallback(this);
+        }
+    }
+
+};
+
+
+
 // validate the entire form
 function validate_sub(){
+
     var name_valid = validate_name();
     var addr_valid = validate_address();
     var img_valid = validate_img();
     var rating_valid = validate_rating();
     var review_valid = validate_review();
     var check_array = [name_valid, addr_valid, img_valid, rating_valid, review_valid];
+
     if (check_array.every(Boolean)){
+
         window.alert("validation successful");
+
         return true;
+
     } else {
+
         return false;
     }
 }
