@@ -3,14 +3,17 @@
 ### Description
 The website allows users to upload reviews for gas stations in the country of Poland. It is composed of a search page, a sample object page displaying a review for a single gas station, a sample search results page, a registration page for the user to make an account, and a sample review submission page for the user to upload a gas station review. To submit reviews for gas stations, the user is required to make an account that fufils the account creation requirements.
 
+## Note  
+currently only front end of site displayed for github pages, full functionality from AWS removed due to end of project  
+
 ### Group members:
 - Jakub Pawlikowski 400011899
 - Anthony Mella 400019353
 
 
 ### Link to the website:  
-[Search](https://polskagasreviews.me)  
-note: the site can be accessed with https and without
+[Search](http://polandgasreviews.me)  
+note: site only accessible via http due to github pages for now  
 
 
 ### Validation:
